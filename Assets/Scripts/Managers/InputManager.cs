@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.P)) {
-            LoadScene(3);
+            LoadScene(2);
         }
     }
 

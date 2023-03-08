@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Microgames/FoodFallFrenzy.unity
     guid: cec203736dc79bb44be9543cd82823e8
+  - enabled: 1
+    path: Assets/Scenes/Microgames/ChoppingBlock.unity
+    guid: a568dc6a2f2ee8545b00c23591f3af53
   m_configObjects: {}
