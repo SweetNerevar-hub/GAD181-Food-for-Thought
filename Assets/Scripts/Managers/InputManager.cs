@@ -46,6 +46,10 @@ public class InputManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.P)) {
             LoadScene(2);
         }
+
+        else if (Input.GetKeyDown(KeyCode.O)) {
+            LoadScene(3);
+        }
     }
 
     void LoadScene(int sceneIndex) {

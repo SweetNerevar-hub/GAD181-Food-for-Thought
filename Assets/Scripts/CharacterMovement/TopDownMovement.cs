@@ -17,19 +17,26 @@ public class TopDownMovement : MonoBehaviour {
         speed = 5;
     }
 
-    protected virtual void MoveUp() {
+    void MoveUp() {
         transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
 
-    protected virtual void MoveDown() {
+    void MoveDown() {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
     }
 
-    protected virtual void MoveLeft() {
+    void MoveLeft() {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
 
-    protected virtual void MoveRight() {
+    void MoveRight() {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
+    }
+
+    private void OnDisable() {
+        InputManager.instance.MoveUp -= MoveUp;
+        InputManager.instance.MoveDown -= MoveDown;
+        InputManager.instance.MoveLeft -= MoveLeft;
+        InputManager.instance.MoveRight -= MoveRight;
     }
 }

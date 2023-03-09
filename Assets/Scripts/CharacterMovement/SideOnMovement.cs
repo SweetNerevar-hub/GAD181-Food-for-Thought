@@ -17,19 +17,21 @@ public class SideOnMovement : MonoBehaviour {
         speed = 5;
     }
 
-    private void Update() {
-        transform.Translate(Vector2.down * gravity * Time.deltaTime);
-    }
-
-    protected virtual void Jump() {
+    void Jump() {
         transform.Translate(Vector2.up * jumpForce * Time.deltaTime);
     }
 
-    protected virtual void MoveRight() {
+    void MoveRight() {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
-    protected virtual void MoveLeft() {
+    void MoveLeft() {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
+    }
+
+    private void OnDisable() {
+        InputManager.instance.Jump -= Jump;
+        InputManager.instance.MoveRight -= MoveRight;
+        InputManager.instance.MoveLeft -= MoveLeft;
     }
 }
