@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour {
 
     public static UIManager instance;
 
+    public GameObject[] UI;
+
     private void Awake() {
         if(instance == null) {
             instance = this;
@@ -15,16 +17,32 @@ public class UIManager : MonoBehaviour {
     }
 
     private void Start() {
-        SceneManager.LoadScene(1);
-
-        EventManager.instance.OnUpdateUI += MainMenuUI;
+        EventManager.instance.OnUpdateUI += UnloadExisitingUI;
+        EventManager.instance.UpdateUI(1);
     }
 
-    void MainMenuUI(int sceneIndex) {
+    void UnloadExisitingUI(int sceneIndex) {
+        if (!UI[sceneIndex - 1]) {
+            Debug.Log("Went over array count");
+            return;
+        }
+
+        foreach (GameObject element in UI) {
+            element.SetActive(false);
+        }
+
+        LoadSceneUI(sceneIndex);
+    }
+
+    void LoadSceneUI(int sceneIndex) {
+        SceneManager.LoadScene(sceneIndex);
+
+        UI[sceneIndex - 1].SetActive(true);
+
         Debug.Log("Loaded Scene: " + sceneIndex);
     }
 
     private void OnDisable() {
-        EventManager.instance.OnUpdateUI -= MainMenuUI;
+        EventManager.instance.OnUpdateUI -= UnloadExisitingUI;
     }
 }
