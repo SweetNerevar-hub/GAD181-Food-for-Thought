@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TopDownMovement : MonoBehaviour {
 
-    float speed;
+    public float speed;
 
     // Start is called before the first frame update
     void Start() {
@@ -13,8 +13,6 @@ public class TopDownMovement : MonoBehaviour {
         InputManager.instance.MoveDown += MoveDown;
         InputManager.instance.MoveLeft += MoveLeft;
         InputManager.instance.MoveRight += MoveRight;
-
-        speed = 5;
     }
 
     void MoveUp() {
