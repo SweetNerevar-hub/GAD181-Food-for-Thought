@@ -14,4 +14,10 @@ public class EventManager : MonoBehaviour {
             DontDestroyOnLoad(instance);
         }
     }
+
+    public event Action<int> OnUpdateUI;
+
+    public void UpdateUI(int sceneIndex) {
+        OnUpdateUI?.Invoke(sceneIndex);
+    }
 }
