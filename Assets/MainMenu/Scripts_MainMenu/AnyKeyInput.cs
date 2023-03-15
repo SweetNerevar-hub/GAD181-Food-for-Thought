@@ -10,7 +10,7 @@ public class AnyKeyInput : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            SceneManager.LoadScene(2);
+            EventManager.instance.UpdateUI(2);
         }
     }
 }
