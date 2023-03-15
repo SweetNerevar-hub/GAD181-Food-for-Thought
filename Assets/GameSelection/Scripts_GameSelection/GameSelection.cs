@@ -14,6 +14,10 @@ public class GameSelection : MonoBehaviour
     {
         EventManager.instance.UpdateUI(5);
     }
+      public void PlaySmoothieTag()
+    {
+         EventManager.instance.UpdateUI(6);
+    }
 
     /*
     public void PlayPacFood()
@@ -28,10 +32,7 @@ public class GameSelection : MonoBehaviour
     {
         SceneManager.LoadScene();
     }
-        public void PlaySmoothieTag()
-    {
-        SceneManager.LoadScene();
-    }
+  
     */
 
 }
