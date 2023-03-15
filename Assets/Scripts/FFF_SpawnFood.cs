@@ -8,11 +8,12 @@ namespace FoodFallFrenzy {
         public GameObject[] spawnPoints;
         public GameObject[] food;
 
-        // Update is called once per frame
-        void Update() {
-            if (Input.GetKeyDown(KeyCode.T)) {
-                SpawnFood();
-            }
+        public int gameTimer;
+
+        private void Start() {
+            gameTimer = 30;
+
+            StartCoroutine(FoodSpawnerTimer());
         }
 
         void SpawnFood() {
@@ -20,6 +21,19 @@ namespace FoodFallFrenzy {
             int randomFood = Random.Range(0, food.Length);
 
             Instantiate(food[randomFood], spawnPoints[spawnPoint].transform.position, Quaternion.identity);
+        }
+
+        IEnumerator FoodSpawnerTimer() {
+            while(gameTimer > 0) {
+                gameTimer--;
+                SpawnFood();
+
+                yield return new WaitForSeconds(1);
+            }
+
+            Debug.Log("Game Over!");
+
+            yield return null;
         }
     }
 }

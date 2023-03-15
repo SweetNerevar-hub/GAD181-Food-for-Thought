@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour {
         Debug.Log("Loaded Scene: " + sceneIndex);
     }
 
-    void FFF_UpdatePlayerScore(bool playerOne) {
+    void FFF_UpdatePlayerScore(bool playerOne, GameObject food) {
         if (playerOne) {
             playerOneScore++;
             FFF_PlayerOneScore.GetComponent<Text>().text = "Player 1 Score: " + playerOneScore;
