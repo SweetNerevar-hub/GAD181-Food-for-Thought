@@ -8,11 +8,11 @@ public class GameSelection : MonoBehaviour
     //SceneManagement script for game selection Menu.
     public void PlayChoppingBlock ()
     {
-        SceneManager.LoadScene(4);
+        EventManager.instance.UpdateUI(4);
     }
     public void PlayFoodFallFrenzy()
     {
-        SceneManager.LoadScene(5);
+        EventManager.instance.UpdateUI(5);
     }
 
     /*
