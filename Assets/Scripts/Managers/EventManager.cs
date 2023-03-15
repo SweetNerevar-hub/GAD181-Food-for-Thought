@@ -16,13 +16,13 @@ public class EventManager : MonoBehaviour {
     }
 
     public event Action<int> OnUpdateUI;
-    public event Action<bool> OnCollectFood_FFF;
+    public event Action<bool, GameObject> OnCollectFood_FFF;
 
     public void UpdateUI(int sceneIndex) {
         OnUpdateUI?.Invoke(sceneIndex);
     }
 
-    public void FFF_CollectFood(bool playerOne) {
-        OnCollectFood_FFF?.Invoke(playerOne);
+    public void FFF_CollectFood(bool playerOne, GameObject food) {
+        OnCollectFood_FFF?.Invoke(playerOne, food);
     }
 }

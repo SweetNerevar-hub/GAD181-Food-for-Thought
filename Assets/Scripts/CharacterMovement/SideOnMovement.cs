@@ -8,7 +8,6 @@ public class SideOnMovement : MonoBehaviour {
 
     public bool playerOne;
     public float jumpForce, speed;
-    float h;
 
     // Start is called before the first frame update
     void Start() {
@@ -16,15 +15,17 @@ public class SideOnMovement : MonoBehaviour {
     }
 
     private void Update() {
-        h = Input.GetAxisRaw("Horizontal");
-
         if (playerOne) {
             if (Input.GetKeyDown(KeyCode.Space)) {
                 Jump();
             }
 
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
-                Movement();
+            if (Input.GetKey(KeyCode.A)) {
+                MoveLeft();
+            }
+
+            else if (Input.GetKey(KeyCode.D)) {
+                MoveRight();
             }
         }
 
@@ -33,8 +34,12 @@ public class SideOnMovement : MonoBehaviour {
                 Jump();
             }
 
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) {
-                Movement();
+            if (Input.GetKey(KeyCode.LeftArrow)) {
+                MoveLeft();
+            }
+
+            else if (Input.GetKey(KeyCode.RightArrow)) {
+                MoveRight();
             }
         }
     }
@@ -51,14 +56,17 @@ public class SideOnMovement : MonoBehaviour {
         }
     }
 
-    void Movement() {
-        rb.velocity = new Vector2(h * speed, rb.velocity.y);
+    void MoveRight() {
+        rb.velocity = new Vector2(speed, rb.velocity.y);
+    }
+
+    void MoveLeft() {
+        rb.velocity = new Vector2(-speed, rb.velocity.y);
     }
 
     private void OnTriggerEnter(Collider col) {
         if (col.GetComponent<Collider>().tag == "FFF_CollectableFood") {
-            Debug.Log("Hit Food!");
-            EventManager.instance.FFF_CollectFood(playerOne);
+            EventManager.instance.FFF_CollectFood(playerOne, col.gameObject);
         }
     }
 }
