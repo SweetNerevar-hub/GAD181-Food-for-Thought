@@ -10,7 +10,7 @@ public class AnyKeyInput : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            EventManager.instance.UpdateUI(2);
+            EventManager.instance.UpdateUI(3);
         }
     }
 }
