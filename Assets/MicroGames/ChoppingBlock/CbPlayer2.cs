@@ -11,6 +11,7 @@ public class CbPlayer2 : MonoBehaviour
     public bool p2FirstInputDetected = false;
     public bool p2Dummy = false;
     public int p2InputCount = 0;
+    public AudioSource p2Chop;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,47 +25,54 @@ public class CbPlayer2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (p2InputCount <= 10)
+        MasterObjectScript masterObjectScript = GetComponentInParent<MasterObjectScript>();
+        if (masterObjectScript.gameOver == false)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (p2InputCount <= 10)
             {
-                p2FirstInputDetected = true;
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    p2FirstInputDetected = true;
+                }
+                else if (p2FirstInputDetected == true && p2Dummy == false)
+                {
+                    p2Renderer.sprite = p2Sprite[p2CurrentFrame];
+                    p2CurrentFrame++;
+                    p2Dummy = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.DownArrow) && p2FirstInputDetected)
+                {
+                    p2Renderer.sprite = p2Sprite[p2CurrentFrame];
+                    p2CurrentFrame++;
+                    p2InputCount++;
+                    p2FirstInputDetected = false;
+                    p2Dummy = false;
+                    p2Chop.Play();
+                }
             }
-            else if (p2FirstInputDetected == true && p2Dummy == false)
+            if (p2InputCount > 10)
             {
-                p2Renderer.sprite = p2Sprite[p2CurrentFrame];
-                p2CurrentFrame++;
-                p2Dummy = true;
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow) && p2FirstInputDetected)
-            {
-                p2Renderer.sprite = p2Sprite[p2CurrentFrame];
-                p2CurrentFrame++;
-                p2InputCount++;
-                p2FirstInputDetected = false;
-                p2Dummy = false;
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    p2FirstInputDetected = true;
+                }
+                else if (p2FirstInputDetected == true && p2Dummy == false)
+                {
+                    p2Renderer.sprite = p2Sprite[20];
+
+                    p2Dummy = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.DownArrow) && p2FirstInputDetected)
+                {
+                    p2Renderer.sprite = p2Sprite[21];
+
+                    p2InputCount++;
+                    p2FirstInputDetected = false;
+                    p2Dummy = false;
+                    p2Chop.Play();
+                }
             }
         }
-        if (p2InputCount > 10) 
-        {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                p2FirstInputDetected = true;
-            }
-            else if (p2FirstInputDetected == true && p2Dummy == false)
-            {
-                p2Renderer.sprite = p2Sprite[20];
-                
-                p2Dummy = true;
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow) && p2FirstInputDetected)
-            {
-                p2Renderer.sprite = p2Sprite[21];
-                
-                p2InputCount++;
-                p2FirstInputDetected = false;
-                p2Dummy = false;
-            }
-        }
+
     }
 }
