@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - FFF_CollectableFood
   layers:
   - Default
   - TransparentFX

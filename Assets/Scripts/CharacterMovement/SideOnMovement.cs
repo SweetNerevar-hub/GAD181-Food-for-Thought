@@ -6,20 +6,37 @@ public class SideOnMovement : MonoBehaviour {
 
     Rigidbody rb;
 
+    public bool playerOne;
     public float jumpForce, speed;
     float h;
 
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody>();
-
-        InputManager.instance.Jump += Jump;
-        InputManager.instance.MoveRight += Movement;
-        InputManager.instance.MoveLeft += Movement;
     }
 
     private void Update() {
         h = Input.GetAxisRaw("Horizontal");
+
+        if (playerOne) {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                Jump();
+            }
+
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
+                Movement();
+            }
+        }
+
+        else {
+            if (Input.GetKeyDown(KeyCode.RightShift)) {
+                Jump();
+            }
+
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) {
+                Movement();
+            }
+        }
     }
 
     void Jump() {
@@ -38,12 +55,10 @@ public class SideOnMovement : MonoBehaviour {
         rb.velocity = new Vector2(h * speed, rb.velocity.y);
     }
 
-    private void OnDisable() {
-
-        // Is called when the script is disabled
-        // Stop conflicts between the switching from top-down to side-on movement
-        InputManager.instance.Jump -= Jump;
-        InputManager.instance.MoveRight -= Movement;
-        InputManager.instance.MoveLeft -= Movement;
+    private void OnTriggerEnter(Collider col) {
+        if (col.GetComponent<Collider>().tag == "FFF_CollectableFood") {
+            Debug.Log("Hit Food!");
+            EventManager.instance.FFF_CollectFood(playerOne);
+        }
     }
 }

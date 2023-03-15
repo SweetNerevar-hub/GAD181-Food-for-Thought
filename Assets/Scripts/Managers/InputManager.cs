@@ -15,6 +15,20 @@ public class InputManager : MonoBehaviour {
         }
     }
 
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.P)) {
+            EventManager.instance.UpdateUI(2);
+        }
+        
+        else if (Input.GetKeyDown(KeyCode.O)) {
+            EventManager.instance.UpdateUI(3);
+        }
+    }
+}
+
+#region Old Movement Code
+
+    /*
     public event Action Jump;
     public event Action MoveUp;
     public event Action MoveDown;
@@ -42,17 +56,7 @@ public class InputManager : MonoBehaviour {
         else if (Input.GetKey(KeyCode.D)) {
             MoveRight?.Invoke();
         }
-
-        if (Input.GetKeyDown(KeyCode.P)) {
-            LoadScene(2);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.O)) {
-            LoadScene(3);
-        }
     }
+    */
 
-    void LoadScene(int sceneIndex) {
-        SceneManager.LoadScene(sceneIndex);
-    }
-}
+#endregion

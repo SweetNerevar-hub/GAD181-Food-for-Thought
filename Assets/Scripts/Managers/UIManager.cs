@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
@@ -9,6 +10,9 @@ public class UIManager : MonoBehaviour {
 
     // Array of Scene UI's
     public GameObject[] UI;
+
+    public Text FFF_PlayerOneScore, FFF_PlayerTwoScore;
+    public int playerOneScore, playerTwoScore;
 
     private void Awake() {
         if(instance == null) {
@@ -22,6 +26,8 @@ public class UIManager : MonoBehaviour {
         // When OnUpdateUI is called, call the UnloadExisitingUI function
         // This is to stop UI's from different scenes overlapping
         EventManager.instance.OnUpdateUI += UnloadExisitingUI;
+
+        EventManager.instance.OnCollectFood_FFF += FFF_UpdatePlayerScore;
 
         // This loads the Main Menu from the Master Scene when the game starts
         EventManager.instance.UpdateUI(1);
@@ -49,7 +55,20 @@ public class UIManager : MonoBehaviour {
         Debug.Log("Loaded Scene: " + sceneIndex);
     }
 
+    void FFF_UpdatePlayerScore(bool playerOne) {
+        if (playerOne) {
+            playerOneScore++;
+            FFF_PlayerOneScore.GetComponent<Text>().text = "Player 1 Score: " + playerOneScore;
+        }
+
+        else {
+            playerTwoScore++;
+            FFF_PlayerTwoScore.GetComponent<Text>().text = "Player 2 Score: " + playerTwoScore;
+        }
+    }
+
     private void OnDisable() {
         EventManager.instance.OnUpdateUI -= UnloadExisitingUI;
+        EventManager.instance.OnCollectFood_FFF -= FFF_UpdatePlayerScore;
     }
 }

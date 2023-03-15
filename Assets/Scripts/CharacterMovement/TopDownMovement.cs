@@ -9,10 +9,12 @@ public class TopDownMovement : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        /*
         InputManager.instance.MoveUp += MoveUp;
         InputManager.instance.MoveDown += MoveDown;
         InputManager.instance.MoveLeft += MoveLeft;
         InputManager.instance.MoveRight += MoveRight;
+        */
     }
 
     void MoveUp() {
@@ -32,9 +34,11 @@ public class TopDownMovement : MonoBehaviour {
     }
 
     private void OnDisable() {
+        /*
         InputManager.instance.MoveUp -= MoveUp;
         InputManager.instance.MoveDown -= MoveDown;
         InputManager.instance.MoveLeft -= MoveLeft;
         InputManager.instance.MoveRight -= MoveRight;
+        */
     }
 }
