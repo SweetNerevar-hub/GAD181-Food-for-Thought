@@ -31,7 +31,9 @@ namespace FoodFallFrenzy {
                 yield return new WaitForSeconds(1);
             }
 
-            Debug.Log("Game Over!");
+            yield return new WaitForSeconds(3);
+
+            EventManager.instance.FFF_DisplayWinner();
 
             yield return null;
         }

@@ -15,14 +15,12 @@ public class InputManager : MonoBehaviour {
         }
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.P)) {
-            EventManager.instance.UpdateUI(2);
-        }
-        
-        else if (Input.GetKeyDown(KeyCode.O)) {
-            EventManager.instance.UpdateUI(3);
-        }
+    // Input Events for Banana Pistols at Dawn --
+    public event Action EnablePlayerInput_BPAD;
+
+
+    public void BPAD_EnablePlayerInput() {
+        EnablePlayerInput_BPAD?.Invoke();
     }
 }
 
@@ -34,26 +32,29 @@ public class InputManager : MonoBehaviour {
     public event Action MoveDown;
     public event Action MoveLeft;
     public event Action MoveRight;
+    */
 
+
+    /*
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.RightShift)) {
             Jump?.Invoke();
         }
 
-        else if (Input.GetKey(KeyCode.W)) {
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
             MoveUp?.Invoke();
         }
 
-        else if (Input.GetKey(KeyCode.S)) {
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
             MoveDown?.Invoke();
         }
 
-        else if (Input.GetKey(KeyCode.A)) {
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
             MoveLeft?.Invoke();
         }
 
-        else if (Input.GetKey(KeyCode.D)) {
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
             MoveRight?.Invoke();
         }
     }
