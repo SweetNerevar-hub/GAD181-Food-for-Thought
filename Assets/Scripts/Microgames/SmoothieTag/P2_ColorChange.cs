@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColourChange : MonoBehaviour
+public class P2_ColorChange : MonoBehaviour
 {
 
 
@@ -23,12 +23,12 @@ public class ColourChange : MonoBehaviour
         {
             if (!isTagged)
             {
-                render.color = Color.red;
+                render.color = Color.green;
                 isTagged = true;
             }
             else
             {
-                render.color = Color.green;
+                render.color = Color.red;
                 isTagged = false;
             }
         }
