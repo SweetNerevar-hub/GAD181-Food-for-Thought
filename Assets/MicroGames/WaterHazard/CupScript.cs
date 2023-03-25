@@ -23,6 +23,10 @@ public class CupScript : MonoBehaviour
 
     void Update()
     {
+        if(currentFrame >= 21)
+        {
+            currentFrame = 21;
+        }
 
         if (cupCapacity > 0f && cupEmpty == true)
         {
