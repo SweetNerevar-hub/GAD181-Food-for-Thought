@@ -14,8 +14,6 @@ public class CupScript : MonoBehaviour
     float bottomRange = 10f;
     float topRange = 20f;
 
-    
-
     void Start()
     {
         CupRenderer = GetComponent<SpriteRenderer>();
@@ -23,11 +21,14 @@ public class CupScript : MonoBehaviour
 
     void Update()
     {
+        //Prevents requesting a variable outside the CupSprite list
         if(currentFrame >= 21)
         {
             currentFrame = 21;
         }
 
+        //No matter how little water Player1 pours, the sprite will change to one 
+        //with water in the cup
         if (cupCapacity > 0f && cupEmpty == true)
         {
             CupRenderer.sprite = CupSprite[1];
@@ -35,6 +36,8 @@ public class CupScript : MonoBehaviour
             cupEmpty = false;
         }
 
+        //Once the CupCapacity exceeds the range, the sprite changes and a new
+        //range is made that the CupCapacity is within
         if(IsValueWithinRange(cupCapacity, bottomRange, topRange))
         {
             currentFrame++;
@@ -43,7 +46,7 @@ public class CupScript : MonoBehaviour
             topRange += 10;
         }    
     }
-
+    //Determines the range that relates CupSprite and CupCapacity
     bool IsValueWithinRange(float value, float min, float max)
     {
         return value >= min && value <= max;
