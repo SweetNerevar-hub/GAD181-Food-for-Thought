@@ -104,8 +104,12 @@ public class UIManager : MonoBehaviour {
             FFF_Header.GetComponent<Text>().text = "Winner: Player One";
         }
 
-        else {
+        else if(FFF_playerOneScore < FFF_playerTwoScore){
             FFF_Header.GetComponent<Text>().text = "Winner: Player Two";
+        }
+
+        else {
+            FFF_Header.GetComponent<Text>().text = "It's a Tie!";
         }
 
         Invoke("BackToMenu", 5f);
