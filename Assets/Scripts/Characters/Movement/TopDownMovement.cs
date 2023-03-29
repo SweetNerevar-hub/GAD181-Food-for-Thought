@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TopDownMovement : MonoBehaviour {
 
-    Rigidbody rb;
+    Rigidbody2D rb;
 
     float h, v;
 
@@ -14,7 +14,7 @@ public class TopDownMovement : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
 
         /*
         InputManager.instance.MoveUp += MoveUp;
