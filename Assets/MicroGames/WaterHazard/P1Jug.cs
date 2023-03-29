@@ -11,7 +11,7 @@ public class P1Jug : MonoBehaviour
 
     public bool turnOver = false;
     public bool finishedWaiting = false;
-    public float cupFillSpeed = 50f;
+    private float cupFillSpeed = 150f;
 
     public AudioSource p1Pour;
     public bool playAudio = false;

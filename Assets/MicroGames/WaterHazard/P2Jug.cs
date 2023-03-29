@@ -11,7 +11,7 @@ public class P2Jug : MonoBehaviour
 
     public bool turnOver = false;
     public bool finishedWaiting = false;
-
+    private float cupFillSpeed = 150f;
 
 
     void Start()
@@ -27,7 +27,7 @@ public class P2Jug : MonoBehaviour
         if (wHMasterObject.p2Turn == true && Input.GetKey(KeyCode.LeftArrow))
         {
             AnimateP2JugStart();
-            GetComponentInParent<CupScript>().cupCapacity += 0.5f;
+            GetComponentInParent<CupScript>().cupCapacity += cupFillSpeed * Time.deltaTime;
         }
         //Once Player2 releases Left, the sprite returns to normal and changes the 
         //bool being observed by the MasterObject that determines whether its 
