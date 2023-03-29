@@ -25,6 +25,7 @@ public class ColourChange : MonoBehaviour
             {
                 render.color = Color.red;
                 isTagged = true;
+                Debug.Log("Tagged");
             }
             else
             {
