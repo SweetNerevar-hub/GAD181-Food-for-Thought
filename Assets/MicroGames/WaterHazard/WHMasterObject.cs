@@ -35,6 +35,7 @@ public class WHMasterObject : MonoBehaviour
             p1Text.SetText("");
             p2Text.SetText("");
             winnerText.SetText("Player 2 Wins!");
+            Invoke("BackToMenu", 3f);
         }
 
         //If Player2 ends turn with cup over capacity, Player1 wins
@@ -45,6 +46,7 @@ public class WHMasterObject : MonoBehaviour
             p1Text.SetText("");
             p2Text.SetText("");
             winnerText.SetText("Player 1 Wins!");
+            Invoke("BackToMenu", 3f);
         }
 
         //Once Player1 is finished their turn, the parameters that allow they to play are
@@ -67,6 +69,11 @@ public class WHMasterObject : MonoBehaviour
             p1Text.SetText("Player 1 Turn");
         }
         
+    }
+
+    void BackToMenu()
+    {
+        EventManager.instance.UpdateUI(3);
     }
 
 }

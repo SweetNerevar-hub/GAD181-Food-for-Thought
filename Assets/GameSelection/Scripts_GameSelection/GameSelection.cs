@@ -20,11 +20,15 @@ public class GameSelection : MonoBehaviour
         EventManager.instance.UpdateUI(4);
     }
 
-      public void PlaySmoothieTag()
+    public void PlaySmoothieTag()
     {
          EventManager.instance.UpdateUI(7);
     }
     
+    public void PlayWaterHazard()
+    {
+        EventManager.instance.UpdateUI(8);
+    }
 
     /*
     public void PlayPacFood()
