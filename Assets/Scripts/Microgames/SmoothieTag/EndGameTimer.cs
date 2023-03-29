@@ -30,6 +30,7 @@ public class EndGameTimer : MonoBehaviour
         Debug.Log("Game Over");
 
         yield return new WaitForSeconds(1f);
+       // EventManager.instance.UpdateUI(3);
 
         countDownDisplay.gameObject.SetActive(false);
     }
