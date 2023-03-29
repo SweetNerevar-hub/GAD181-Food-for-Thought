@@ -1367,6 +1367,7 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
+<<<<<<< HEAD
       y: 21
 <<<<<<< Updated upstream
       width: 1550.6666
