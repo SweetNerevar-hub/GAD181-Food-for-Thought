@@ -11,6 +11,7 @@ public class P1Jug : MonoBehaviour
 
     public bool turnOver = false;
     public bool finishedWaiting = false;
+    public float cupFillSpeed = 50f;
 
     public AudioSource p1Pour;
     public bool playAudio = false;
@@ -28,8 +29,8 @@ public class P1Jug : MonoBehaviour
         {
             
             AnimateP1JugStart();
-            GetComponentInParent<CupScript>().cupCapacity += 0.5f;
-            playAudio = true;
+            GetComponentInParent<CupScript>().cupCapacity += cupFillSpeed *Time.deltaTime;
+            //playAudio = true;
         }
         //Once Player 1 releases D, the sprite returns to normal and changes the 
         //bool being observed by the MasterObject that determines whether its 
@@ -41,10 +42,10 @@ public class P1Jug : MonoBehaviour
             turnOver = true;
             playAudio = false;
         }
-        if(playAudio == true)
+        /*if(playAudio == true)
         {
             p1Pour.Play();
-        }
+        }*/
     }
 
     //Changes the sprite of the Jug to show the water being poured
