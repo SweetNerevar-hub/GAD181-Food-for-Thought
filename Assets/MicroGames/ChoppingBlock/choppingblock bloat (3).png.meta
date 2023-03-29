@@ -1,0 +1,673 @@
+fileFormatVersion: 2
+guid: 9a3323fa814ef6a41b859e60dc79123e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12800
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8943e9aa330d1dd4e8018c54d0939a27
+      internalID: 1884473984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_1
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 12800
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a9dea05ecf0304497dbb1d46aced63
+      internalID: 1719377428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_2
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 12800
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6ea89832768744ea01b07d8e668351
+      internalID: -145116389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_3
+      rect:
+        serializedVersion: 2
+        x: 9600
+        y: 12800
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9042ce7d9a390da47af91a1a5b430b91
+      internalID: -1136027462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_4
+      rect:
+        serializedVersion: 2
+        x: 12800
+        y: 12800
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d2d6efd54c6e44d867c481a6dc9e19
+      internalID: 262054230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9600
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c876f647cb731c40b9d8125e9311fc4
+      internalID: 1805233323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_6
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 9600
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33bf07963e2803d4cab807caa513eb13
+      internalID: -513040782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_7
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 9600
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cdfa686ea048b4da92fe244ba1984b
+      internalID: -1665149376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_8
+      rect:
+        serializedVersion: 2
+        x: 9600
+        y: 9600
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2a29dae32920d409c92a818e6273f3
+      internalID: -1883379241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_9
+      rect:
+        serializedVersion: 2
+        x: 12800
+        y: 9600
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33fb0593b9ad06647beab825cfe952ff
+      internalID: 1705763539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6400
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362822b80c5298644a93341aefc4bf25
+      internalID: 41588173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_11
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 6400
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0564ea8ed2022141a2b6ef601ce2085
+      internalID: -1781180952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_12
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 6400
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd926b1f84fd648489fc3ebba62a4b29
+      internalID: 1152759051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_13
+      rect:
+        serializedVersion: 2
+        x: 9600
+        y: 6400
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dfc2e21b7557e94c92e6a459406ed97
+      internalID: -1961362620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_14
+      rect:
+        serializedVersion: 2
+        x: 12800
+        y: 6400
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85c53867df9e52418c2dc6776a2ff2c
+      internalID: -1228437103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3200
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfeed1b9973130b4aa76c42cf2d4060b
+      internalID: -514194437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_16
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 3200
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9cfd5ca3ccc147428ff94e38be4c827
+      internalID: -127751393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_17
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 3200
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a857bf533d7f7664a9a1876ec7959c7b
+      internalID: 1085636135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_18
+      rect:
+        serializedVersion: 2
+        x: 9600
+        y: 3200
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb482eb9e45117e4fb0eb53f2f97533d
+      internalID: 1258767836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_19
+      rect:
+        serializedVersion: 2
+        x: 12800
+        y: 3200
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc97c61f8aab0c4bbc5bf4f12086243
+      internalID: -137185907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339ebb60833ba1a43b07c6073c9f517e
+      internalID: -53650733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_21
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e6c7ed53c40144194fe3254ba933b0
+      internalID: 1751317527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_22
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 0
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7365d716035ef9244bf26f21e6f9df60
+      internalID: 558741345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_23
+      rect:
+        serializedVersion: 2
+        x: 9600
+        y: 0
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554bae3d361967d4289cc65e14e8e714
+      internalID: -1818804311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: choppingblock bloat (3)_24
+      rect:
+        serializedVersion: 2
+        x: 12800
+        y: 0
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71477131e4545a744af4072941578bb8
+      internalID: -705335979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      choppingblock bloat (3)_9: 1705763539
+      choppingblock bloat (3)_18: 1258767836
+      choppingblock bloat (3)_17: 1085636135
+      choppingblock bloat (3)_6: -513040782
+      choppingblock bloat (3)_0: 1884473984
+      choppingblock bloat (3)_24: -705335979
+      choppingblock bloat (3)_14: -1228437103
+      choppingblock bloat (3)_12: 1152759051
+      choppingblock bloat (3)_20: -53650733
+      choppingblock bloat (3)_5: 1805233323
+      choppingblock bloat (3)_15: -514194437
+      choppingblock bloat (3)_19: -137185907
+      choppingblock bloat (3)_23: -1818804311
+      choppingblock bloat (3)_21: 1751317527
+      choppingblock bloat (3)_10: 41588173
+      choppingblock bloat (3)_4: 262054230
+      choppingblock bloat (3)_7: -1665149376
+      choppingblock bloat (3)_8: -1883379241
+      choppingblock bloat (3)_22: 558741345
+      choppingblock bloat (3)_13: -1961362620
+      choppingblock bloat (3)_16: -127751393
+      choppingblock bloat (3)_2: -145116389
+      choppingblock bloat (3)_3: -1136027462
+      choppingblock bloat (3)_11: -1781180952
+      choppingblock bloat (3)_1: 1719377428
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
