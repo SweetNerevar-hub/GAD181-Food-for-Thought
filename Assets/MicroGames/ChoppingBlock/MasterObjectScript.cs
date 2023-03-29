@@ -27,6 +27,7 @@ public class MasterObjectScript : MonoBehaviour
         p2Score = cbPlayer2.p2InputCount;
         targetTime -= Time.deltaTime;
 
+
         if (targetTime <= 0.0f)
         {
             targetTime= 0.0f;
@@ -50,6 +51,12 @@ public class MasterObjectScript : MonoBehaviour
         {
             timerText.SetText("Draw!");
         }
+        Invoke("BackToMenu", 3f);
+    }
+
+    void BackToMenu()
+    {
+        EventManager.instance.UpdateUI(3);
     }
 
 }

@@ -1195,6 +1195,7 @@ GameObject:
   - component: {fileID: 534777809}
   - component: {fileID: 534777808}
   - component: {fileID: 534777807}
+  - component: {fileID: 534777810}
   m_Layer: 5
   m_Name: 'Chopping Block Button '
   m_TagString: Untagged
@@ -1317,6 +1318,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534777805}
   m_CullTransparentMesh: 1
+--- !u!114 &534777810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534777805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2560ce0b95e1ce6438af6ac7a6d9bc23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &540408230
 GameObject:
   m_ObjectHideFlags: 0
@@ -2931,6 +2944,7 @@ GameObject:
   - component: {fileID: 1590419740}
   - component: {fileID: 1590419739}
   - component: {fileID: 1590419738}
+  - component: {fileID: 1590419741}
   m_Layer: 5
   m_Name: Water Hazard Button
   m_TagString: Untagged
@@ -3002,7 +3016,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1095372957}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1590419741}
+        m_TargetAssemblyTypeName: GameSelection, Assembly-CSharp
+        m_MethodName: PlayWaterHazard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1590419739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3041,6 +3067,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590419736}
   m_CullTransparentMesh: 1
+--- !u!114 &1590419741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590419736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2560ce0b95e1ce6438af6ac7a6d9bc23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1655351907
 GameObject:
   m_ObjectHideFlags: 0

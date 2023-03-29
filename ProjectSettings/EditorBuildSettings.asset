@@ -24,9 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Microgames/BananaPistolsAtDawn.unity
     guid: f74c9b4e4e6e35641ab17432d1cce7e4
   - enabled: 1
-    path: Assets/Scenes/Microgames/ChoppingBlock.unity
-    guid: a568dc6a2f2ee8545b00c23591f3af53
+    path: Assets/Scenes/Microgames/ChoppingBlockMG.unity
+    guid: 8f29b21c568833a43aa047196f5b9eee
   - enabled: 1
     path: Assets/Scenes/Microgames/SmoothieTag.unity
     guid: e71ec3c14c6d36c4aaf6403b300a0ed8
+  - enabled: 1
+    path: Assets/Scenes/Microgames/WaterHazardMG.unity
+    guid: f6bc31fb03f59304995a61ebe2e52bdd
   m_configObjects: {}
