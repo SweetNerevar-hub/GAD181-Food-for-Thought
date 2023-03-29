@@ -35,18 +35,9 @@ MonoBehaviour:
     x: 2249
     y: 302.5
     width: 1206
-    height: 715
-  m_ShowMode: 4
-  m_Title:
-=======
-    x: 0
-    y: 43
-    width: 1920
-    height: 1037
+    height: 809.3334
   m_ShowMode: 4
   m_Title: Project
->>>>>>> Stashed changes
->>>>>>> main
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
 >>>>>>> Stashed changes
@@ -712,13 +703,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-<<<<<<< HEAD
-    m_SelectedInstanceIDs: 020f0000
-    m_LastClickedInstanceID: 3842
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000ee640000f8640000fe640000
-=======
-    m_SelectedInstanceIDs:
+    m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
 <<<<<<< Updated upstream
     m_HadKeyboardFocusLastEvent: 1
@@ -872,13 +857,11 @@ MonoBehaviour:
 =======
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1cfbffff
+      m_ExpandedIDs: 30faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
         m_OriginalName: 
->>>>>>> Stashed changes
->>>>>>> main
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
@@ -899,12 +882,7 @@ MonoBehaviour:
 =======
 <<<<<<< Updated upstream
         m_ClientGUIView: {fileID: 0}
-      m_SearchString:
-=======
-        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
->>>>>>> Stashed changes
->>>>>>> main
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
     m_LockTracker:
@@ -1389,7 +1367,6 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-<<<<<<< HEAD
       y: 21
 <<<<<<< Updated upstream
       width: 1550.6666
