@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSelection : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class GameSelection : MonoBehaviour
 
     public void PlaySmoothieTag()
     {
-         EventManager.instance.UpdateUI(7);
+         //EventManager.instance.UpdateUI(7);
+        SceneManager.LoadScene(7);
     }
     
     public void PlayWaterHazard()

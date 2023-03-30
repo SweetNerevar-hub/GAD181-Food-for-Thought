@@ -27,11 +27,12 @@ public class DeathZone : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+
         timer.countDownTime = 0;
-        timer.StartCoroutine(timer.CountDownToEnd());
-
-
+        timer.StartCoroutine(timer.CountDownToEnd()); 
+        SceneManager.LoadScene(3);
     }
 
+   
 
 }
