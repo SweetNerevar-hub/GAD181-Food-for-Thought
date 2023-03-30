@@ -23,7 +23,7 @@ public class GameSelection : MonoBehaviour
 
     public void PlaySmoothieTag()
     {
-         //EventManager.instance.UpdateUI(7);
+        //EventManager.instance.UpdateUI(7);
         SceneManager.LoadScene(7);
     }
     

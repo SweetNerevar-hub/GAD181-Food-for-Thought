@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class AnyKeyInput : MonoBehaviour
-{
+{ //Code by Kelecia
        //Detects if any key has been pressed.
     void Update()
     {
         if (Input.anyKey)
         {
             EventManager.instance.UpdateUI(3);
+           // SceneManager.LoadScene(3);
         }
     }
 }
