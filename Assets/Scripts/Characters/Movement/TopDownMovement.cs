@@ -11,6 +11,7 @@ public class TopDownMovement : MonoBehaviour {
 
     public float speed;
     public bool playerOne;
+    
 
     // Start is called before the first frame update
     void Start() {
@@ -82,4 +83,6 @@ public class TopDownMovement : MonoBehaviour {
         InputManager.instance.MoveRight -= MoveRight;
         */
     }
+
+    
 }

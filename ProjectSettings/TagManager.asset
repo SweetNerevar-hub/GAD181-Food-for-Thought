@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - FFF_CollectableFood
+  - MyPoint
   layers:
   - Default
   - TransparentFX
