@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
  
     void Start()
     {
-        gameTimer = 10;
+        gameTimer = 15;
         StartCoroutine(GameTimer());
         
     }

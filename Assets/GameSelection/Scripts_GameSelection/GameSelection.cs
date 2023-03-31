@@ -32,6 +32,10 @@ public class GameSelection : MonoBehaviour
         EventManager.instance.UpdateUI(8);
     }
 
+    public void PlayPacFood()
+    {
+        EventManager.instance.UpdateUI(9);
+    }
     /*
     public void PlayPacFood()
     {
