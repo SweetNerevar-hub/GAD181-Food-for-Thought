@@ -23,7 +23,8 @@ public class ScoreScriptP1 : MonoBehaviour
         {
             ScoreNum += 1;
             Destroy(Point.gameObject);
-            
+            MyscoreText.text = "Player 1 : " + ScoreNum;
+
         }
     }
 }

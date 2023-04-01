@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Microgames/WaterHazardMG.unity
     guid: f6bc31fb03f59304995a61ebe2e52bdd
+  - enabled: 1
+    path: Assets/Scenes/Microgames/PacFood.unity
+    guid: 9aeba976ac93cdf469b4fc18f2c3aadf
   m_configObjects: {}
