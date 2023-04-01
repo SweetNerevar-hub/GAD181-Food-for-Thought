@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour {
         BPAD_PlayerOneInput.GetComponent<Text>().text = null;
         BPAD_PlayerTwoInput.GetComponent<Text>().text = null;
 
-       // Invoke("BackToMenu", 5f);
+       Invoke("BackToMenu", 5f);
     }
     #endregion
 
