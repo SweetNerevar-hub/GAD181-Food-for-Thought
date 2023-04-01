@@ -5,21 +5,30 @@ using UnityEngine;
 namespace BPAD {
     public class BPAD_PlayerInput : MonoBehaviour {
 
-        static bool inputEnabled;
+        public AudioSource audioSource;
+        Animator animator;
+
+        static bool inputEnabled, gameOver;
 
         string[] avaliableKeys = new string[] { "a", "d", "j", "l" };
 
-        public bool playerOne, correctInput;
+        public bool playerOne, correctInput, isWinner;
         public int playerOne_RandomlyChosenKey, playerTwo_RandomlyChosenKey;
 
         // Start is called before the first frame update
         void Start() {
             inputEnabled = false;
+            gameOver = false;
 
+            animator = GetComponent<Animator>();
             InputManager.instance.EnablePlayerInput_BPAD += EnablePlayerInput;
         }
 
         private void Update() {
+            if (gameOver) {
+                UpdateAnimations();
+            }
+
             switch (inputEnabled) {
                 case false:
 
@@ -70,8 +79,23 @@ namespace BPAD {
 
         void Winner() {
             inputEnabled = false;
+            isWinner = true;
+            gameOver = true;
 
-            EventManager.instance.BPAD_DisplayWinner(gameObject.name);
+            audioSource.PlayOneShot(audioSource.clip);
+
+            EventManager.instance.BPAD_DisplayWinner(gameObject);
+        }
+
+        void UpdateAnimations() {
+            if (isWinner) { 
+                animator.SetInteger("isWinner", 1);
+
+            }
+
+            else {
+                animator.SetInteger("isWinner", -1);
+            }
         }
 
         private void OnDisable() {

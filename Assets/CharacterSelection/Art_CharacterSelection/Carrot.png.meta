@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,301 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Carrot_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 308
+        width: 40
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f79f45828186e2e459da33b636727b95
+      internalID: -818716463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_1
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 307
+        width: 40
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcbfc80ad5c26947a200190cc961e89
+      internalID: 1483116556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_2
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 308
+        width: 40
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1c2d7c6deb8f14e84a0da38cd0307e
+      internalID: 1589286017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_3
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 307
+        width: 40
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c53ef086571aeab488a20873fd31a5e7
+      internalID: -1756345866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_4
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 208
+        width: 40
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acbfa0baa9dc1de40abed49d321bfd8b
+      internalID: 898186587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_5
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 208
+        width: 40
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dcd008a100742e4e922428882134a75
+      internalID: -1983339455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_6
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 208
+        width: 40
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf9a48f879f45e449d0bbfd3c9e2caf
+      internalID: 1941701971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 208
+        width: 54
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4876a0cf3d19046a08a68651dd5e30
+      internalID: -922848129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_8
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 108
+        width: 44
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b042024f978324949b593aca7800e71c
+      internalID: 1429020828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_9
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 108
+        width: 40
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c795156179fae446a52ed58cd779d94
+      internalID: -1282297980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_10
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 108
+        width: 40
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1935324651e202e46a5cd2f641267e13
+      internalID: 943538210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_11
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 108
+        width: 40
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bffc387a5bb5436439cb08e5d8e67c62
+      internalID: -462998704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 8
+        width: 44
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2632256a5f351834686910a840602e58
+      internalID: -1653175931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_14
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 5
+        width: 44
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f728a32260a526c4cbc9bfe82404cf02
+      internalID: -1066283477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +408,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Carrot_0: -818716463
+      Carrot_7: -922848129
+      Carrot_8: 1429020828
+      Carrot_9: -1282297980
+      Carrot_12: -882372792
+      Carrot_1: 1483116556
+      Carrot_15: 374836962
+      Carrot_10: 943538210
+      Carrot_11: -462998704
+      Carrot_3: -1756345866
+      Carrot_2: 1589286017
+      Carrot_4: 898186587
+      Carrot_13: -1653175931
+      Carrot_6: 1941701971
+      Carrot_14: -1066283477
+      Carrot_5: -1983339455
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

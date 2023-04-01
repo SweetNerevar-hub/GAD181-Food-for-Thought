@@ -60,8 +60,6 @@ public class UIManager : MonoBehaviour {
         // Loads the relevant UI of the scene just loaded
         // IMPORTANT!!! The order of the array must be the exact same order as the scene heirarchy
         SceneUI[sceneIndex - 1].SetActive(true);
-
-        Debug.Log("Loaded Scene: " + sceneIndex);
     }
 
     #region BananaPistolsAtDawn Functions
@@ -77,12 +75,12 @@ public class UIManager : MonoBehaviour {
         else BPAD_PlayerTwoInput.GetComponent<Text>().text = playerTwoInput + " + RightShift";
     }
 
-    void BPAD_DisplayWinner(string winnerName) {
-        BPAD_Header.GetComponent<Text>().text = "Winner: " + winnerName; // Enable winner
+    void BPAD_DisplayWinner(GameObject winner) {
+        BPAD_Header.GetComponent<Text>().text = "Winner: " + winner.name; // Enable winner
         BPAD_PlayerOneInput.GetComponent<Text>().text = null;
         BPAD_PlayerTwoInput.GetComponent<Text>().text = null;
 
-        Invoke("BackToMenu", 5f);
+       // Invoke("BackToMenu", 5f);
     }
     #endregion
 

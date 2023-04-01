@@ -19,7 +19,7 @@ public class EventManager : MonoBehaviour {
 
     // Events for BananaPistolsAtDawn
     public event Action DisplayAlert_BPAD;
-    public event Action<string> DisplayWinner_BPAD;
+    public event Action<GameObject> DisplayWinner_BPAD;
     public event Action<string, string, bool> DisplayPlayerInput_BPAD;
 
     // Events for FoodFallFrenzy
@@ -35,8 +35,8 @@ public class EventManager : MonoBehaviour {
         DisplayAlert_BPAD?.Invoke();
     }
 
-    public void BPAD_DisplayWinner(string winnerName) {
-        DisplayWinner_BPAD?.Invoke(winnerName);
+    public void BPAD_DisplayWinner(GameObject winner) {
+        DisplayWinner_BPAD?.Invoke(winner);
     }
 
     public void BPAD_DisplayPlayerInput(string playerOneInput, string playerTwoInput, bool playerOne) {
