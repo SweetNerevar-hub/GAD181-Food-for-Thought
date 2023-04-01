@@ -74,7 +74,7 @@ namespace BPAD {
             playerOne_RandomlyChosenKey = Random.Range(0, 2);
             playerTwo_RandomlyChosenKey = Random.Range(2, 4);
 
-            EventManager.instance.BPAD_DisplayPlayerInput(avaliableKeys[playerOne_RandomlyChosenKey], avaliableKeys[playerTwo_RandomlyChosenKey], playerOne);
+            EventManager.instance.BPAD_DisplayPlayerInput(playerOne_RandomlyChosenKey, playerTwo_RandomlyChosenKey, playerOne);
         }
 
         void Winner() {

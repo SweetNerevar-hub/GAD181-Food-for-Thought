@@ -12,12 +12,18 @@ public class BPAD_OneLiners : MonoBehaviour {
     void Start() {
         oneLiners = new string[] {
             "I'm unbeetable",
-            "Time to split"
+            "Time to split",
+            "You're leeking",
+            "I'm berry disappointed in your aim",
+            "Don't be so melon-coli"
         };
     }
 
     private void OnEnable() {
         EventManager.instance.DisplayWinner_BPAD += DisplayOneLiner;
+
+        speechBubbles[0].GetComponent<Image>().enabled = false;
+        speechBubbles[1].GetComponent<Image>().enabled = false;
     }
 
     void DisplayOneLiner(GameObject winner) {
@@ -34,8 +40,6 @@ public class BPAD_OneLiners : MonoBehaviour {
             speechBubbles[1].GetComponent<Image>().enabled = true;
             speechBubbles[1].GetComponentInChildren<Text>().text = oneLiners[line];
         }
-        
-        
     }
 
     private void OnDisable() {

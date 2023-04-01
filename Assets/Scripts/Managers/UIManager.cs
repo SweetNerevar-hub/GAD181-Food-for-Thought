@@ -11,10 +11,15 @@ public class UIManager : MonoBehaviour {
     // Array of Scene UI's
     public GameObject[] SceneUI;
 
-    public Text BPAD_Header, BPAD_PlayerOneInput, BPAD_PlayerTwoInput;
-    public Text FFF_Header, Text_FFF_PlayerOneScore, Text_FFF_PlayerTwoScore;
+    #region BPAD_Variables
+    public Text[] BPAD_Text;
+    public Image[] spriteDisplay;
+    #endregion
 
+    #region FoodFallFrenzy Variables
+    public Text FFF_Header, Text_FFF_PlayerOneScore, Text_FFF_PlayerTwoScore;
     int FFF_playerOneScore, FFF_playerTwoScore;
+    #endregion
 
     private void Awake() {
         if(instance == null) {
@@ -60,27 +65,35 @@ public class UIManager : MonoBehaviour {
         // Loads the relevant UI of the scene just loaded
         // IMPORTANT!!! The order of the array must be the exact same order as the scene heirarchy
         SceneUI[sceneIndex - 1].SetActive(true);
+        BPAD_Text[0].text = "Be Ready!";
     }
 
     #region BananaPistolsAtDawn Functions
     void BPAD_CallDrawAlert() {
-        BPAD_Header.gameObject.SetActive(true);
-
-        BPAD_Header.GetComponent<Text>().text = "DRAW!"; // Enable draw image/text
+        BPAD_Text[0].text = "DRAW!"; // Enable draw image/text
         InputManager.instance.BPAD_EnablePlayerInput();
     }
 
-    void BPAD_DisplayPlayerInput(string playerOneInput, string playerTwoInput, bool playerOne) {
-        if(playerOne) BPAD_PlayerOneInput.GetComponent<Text>().text = playerOneInput + " + Space";
-        else BPAD_PlayerTwoInput.GetComponent<Text>().text = playerTwoInput + " + RightShift";
+    void BPAD_DisplayPlayerInput(int playerOneInput, int playerTwoInput, bool playerOne) {
+        if (playerOne) {
+            spriteDisplay[playerOneInput].enabled = true;
+            spriteDisplay[4].enabled = true;
+        }
+
+        else {
+            spriteDisplay[playerTwoInput].enabled = true;
+            spriteDisplay[5].enabled = true;
+        }
     }
 
     void BPAD_DisplayWinner(GameObject winner) {
-        BPAD_Header.GetComponent<Text>().text = "Winner: " + winner.name; // Enable winner
-        BPAD_PlayerOneInput.GetComponent<Text>().text = null;
-        BPAD_PlayerTwoInput.GetComponent<Text>().text = null;
+        BPAD_Text[0].text = "Winner: " + winner.name; // Enable winner
 
-       Invoke("BackToMenu", 5f);
+        foreach (Image item in spriteDisplay) {
+            item.enabled = false;
+        }
+
+        Invoke("BackToMenu", 5f);
     }
     #endregion
 
@@ -115,7 +128,10 @@ public class UIManager : MonoBehaviour {
     #endregion
 
     void BackToMenu() {
-        BPAD_Header.GetComponent<Text>().text = null;
+        foreach (Text items in BPAD_Text) {
+            items.GetComponent<Text>().text = null;
+        }
+
         FFF_Header.GetComponent<Text>().text = null;
         EventManager.instance.UpdateUI(3);
     }
