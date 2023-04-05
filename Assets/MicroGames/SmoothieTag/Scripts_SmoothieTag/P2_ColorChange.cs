@@ -7,17 +7,17 @@ public class P2_ColorChange : MonoBehaviour
 
 
 
-    public SpriteRenderer render;
+   public SpriteRenderer render;
 
     public bool isTagged;
 
     private void Start()
     {
-        render = GetComponent<SpriteRenderer>();
+       // render = GetComponentInChildren<SpriteRenderer>();
     }
 
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {

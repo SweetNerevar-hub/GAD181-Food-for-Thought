@@ -370,6 +370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_1
       objectReference: {fileID: 0}
+    - target: {fileID: 7805006732111348242, guid: 96d0bec8e07255a4c9f1c39addb923f1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7805006732111348243, guid: 96d0bec8e07255a4c9f1c39addb923f1, type: 3}
       propertyPath: m_AngularDrag
       value: 0
@@ -438,8 +442,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7805006733427199086, guid: 96d0bec8e07255a4c9f1c39addb923f1, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96d0bec8e07255a4c9f1c39addb923f1, type: 3}
+--- !u!212 &484836667 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7805006733427199085, guid: 96d0bec8e07255a4c9f1c39addb923f1, type: 3}
+  m_PrefabInstance: {fileID: 330585726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &523759264
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +919,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1040901596 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2885892122242276939, guid: 1a6f3bf466a4df74d80acfc9621f078a, type: 3}
+  m_PrefabInstance: {fileID: 1524407931}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1201019784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2885892122908152758, guid: 1a6f3bf466a4df74d80acfc9621f078a, type: 3}
+  m_PrefabInstance: {fileID: 1524407931}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1201019790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201019784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ca70d52369c6b4f886913d2853c535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  render: {fileID: 1040901596}
+  isTagged: 0
 --- !u!1 &1356431008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,8 +1093,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countDownTime: 10
   countDownDisplay: {fileID: 1356431010}
-  playerOne: {fileID: 0}
-  playerTwo: {fileID: 0}
+  playerOne: {fileID: 1513012496}
+  playerTwo: {fileID: 1201019784}
+--- !u!1 &1513012496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7805006732111348236, guid: 96d0bec8e07255a4c9f1c39addb923f1, type: 3}
+  m_PrefabInstance: {fileID: 330585726}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1513012502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513012496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64481b81f67f57c4e817d53018435b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  render: {fileID: 484836667}
+  isTagged: 0
 --- !u!1001 &1524407931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1069,9 +1125,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2885892122242276936, guid: 1a6f3bf466a4df74d80acfc9621f078a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2885892122908152758, guid: 1a6f3bf466a4df74d80acfc9621f078a, type: 3}
       propertyPath: m_Name
       value: Player_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885892122908152760, guid: 1a6f3bf466a4df74d80acfc9621f078a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885892122908152761, guid: 1a6f3bf466a4df74d80acfc9621f078a, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2885892122908152765, guid: 1a6f3bf466a4df74d80acfc9621f078a, type: 3}
       propertyPath: m_RootOrder
