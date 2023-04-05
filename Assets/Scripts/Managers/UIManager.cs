@@ -1,5 +1,8 @@
+using BPAD;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using System.Transactions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,8 +14,11 @@ public class UIManager : MonoBehaviour {
     // Array of Scene UI's
     public GameObject[] SceneUI;
 
+    int currentScene;
+
     #region BPAD_Variables
-    public Text[] BPAD_Text;
+    public Text[] BPAD_Text; // 0 = Header, 1 = Player One Speech, 2 = Player 2 Speech
+    public Text[] playerPointsText;
     public Image[] spriteDisplay;
     #endregion
 
@@ -55,6 +61,7 @@ public class UIManager : MonoBehaviour {
         }
 
         LoadSceneUI(sceneIndex);
+        currentScene = sceneIndex;
     }
 
     void LoadSceneUI(int sceneIndex) {
@@ -65,12 +72,14 @@ public class UIManager : MonoBehaviour {
         // Loads the relevant UI of the scene just loaded
         // IMPORTANT!!! The order of the array must be the exact same order as the scene heirarchy
         SceneUI[sceneIndex - 1].SetActive(true);
+
+
         BPAD_Text[0].text = "Be Ready!";
     }
 
     #region BananaPistolsAtDawn Functions
     void BPAD_CallDrawAlert() {
-        BPAD_Text[0].text = "DRAW!"; // Enable draw image/text
+        BPAD_Text[0].text = "DRAW!";
         InputManager.instance.BPAD_EnablePlayerInput();
     }
 
@@ -87,13 +96,44 @@ public class UIManager : MonoBehaviour {
     }
 
     void BPAD_DisplayWinner(GameObject winner) {
-        BPAD_Text[0].text = "Winner: " + winner.name; // Enable winner
+        BPAD_Text[0].text = "Point to " + winner.name;
 
+        Invoke("BPAD_ResetUI", 5f);
+
+        BPAD_CheckForWinner(winner);
+    }
+
+    void BPAD_CheckForWinner(GameObject winner) {
+        if (BPAD.BPAD_Score.playerOnePoints == 3) {
+            BPAD_Text[0].text = "Winner: " + winner.name;
+
+            Invoke("BackToMenu", 5f);
+
+        }
+        
+        if (BPAD.BPAD_Score.playerTwoPoints == 3) {
+            BPAD_Text[0].text = "Winner: " + winner.name;
+
+            Invoke("BackToMenu", 5f);
+        }
+        
+        else {
+            Invoke("BPAD_ResetGame", 5f);
+        }
+    }
+
+    void BPAD_ResetUI() {
         foreach (Image item in spriteDisplay) {
             item.enabled = false;
         }
 
-        Invoke("BackToMenu", 5f);
+        foreach (Text items in BPAD_Text) {
+            items.GetComponent<Text>().text = null;
+        }
+    }
+
+    void BPAD_ResetGame() {
+        EventManager.instance.UpdateUI(currentScene);
     }
     #endregion
 
@@ -128,11 +168,11 @@ public class UIManager : MonoBehaviour {
     #endregion
 
     void BackToMenu() {
-        foreach (Text items in BPAD_Text) {
-            items.GetComponent<Text>().text = null;
-        }
+        BPAD.BPAD_Score.playerOnePoints = 0;
+        BPAD.BPAD_Score.playerTwoPoints = 0;
 
         FFF_Header.GetComponent<Text>().text = null;
+
         EventManager.instance.UpdateUI(3);
     }
 }

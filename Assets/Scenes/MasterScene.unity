@@ -585,7 +585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &143921463
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2490,6 +2490,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720816974}
   m_CullTransparentMesh: 1
+--- !u!1 &759877584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 759877585}
+  m_Layer: 5
+  m_Name: PlayerTwoPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &759877585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759877584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 634.4968, y: -57.349747, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1249862441}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &789880241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,6 +2679,9 @@ MonoBehaviour:
   - {fileID: 300503689}
   - {fileID: 1348154065}
   - {fileID: 1539944907}
+  playerPointsText:
+  - {fileID: 0}
+  - {fileID: 0}
   spriteDisplay:
   - {fileID: 789880243}
   - {fileID: 248427983}
@@ -3435,6 +3469,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049943661}
   m_CullTransparentMesh: 1
+--- !u!1 &1083661557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1083661558}
+  m_Layer: 5
+  m_Name: PlayerOnePoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1083661558
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083661557}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1249862441}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -800, y: -175}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1095372955
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,13 +4035,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1249862441}
   - component: {fileID: 1249862442}
+  - component: {fileID: 1249862443}
   m_Layer: 5
   m_Name: BananaPistolsAtDawnUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1249862441
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3988,6 +4059,8 @@ RectTransform:
   - {fileID: 884000014}
   - {fileID: 720816975}
   - {fileID: 2001552990}
+  - {fileID: 1083661558}
+  - {fileID: 759877585}
   m_Father: {fileID: 683069933}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4014,6 +4087,22 @@ MonoBehaviour:
   speechBubbles:
   - {fileID: 884000013}
   - {fileID: 720816974}
+--- !u!114 &1249862443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249862440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d7aaa4241e6d74bbd982325b819634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skull: {fileID: 4866164131399935250, guid: e9823949f2119ee4e9467998161505dd, type: 3}
+  skullSpawnPoints:
+  - {fileID: 1083661558}
+  - {fileID: 759877585}
 --- !u!1 &1306230639
 GameObject:
   m_ObjectHideFlags: 0
