@@ -38,12 +38,12 @@ public class EndGameTimer : MonoBehaviour
     {
         if (playerOne.GetComponent<ColourChange>().isTagged)
         {
-            countDownDisplay.text = "Player 2";
+            countDownDisplay.text = "P2!";
             return false;
         }
         else
         {
-            countDownDisplay.text = "Player 1";
+            countDownDisplay.text = "P1!";
             return true;
         }
 
