@@ -22,6 +22,10 @@ public class P1Jug : MonoBehaviour
 
     void Update()
     {
+        if(GetComponentInParent<CupScript>().currentFrame >= 15)
+        {
+            cupFillSpeed = 50f;
+        }
         //If Player1 presses D during their turn, the jug sprite is updated
         //to show the water being poured, and the CupCapacity increases.
         WHMasterObject wHMasterObject = GetComponentInParent<WHMasterObject>();
