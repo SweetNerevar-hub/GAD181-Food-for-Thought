@@ -18,18 +18,18 @@ public class DeathZone : MonoBehaviour
 
         if(!timer.PlayerOneWin())
         {
-            timer.countDownDisplay.text = "Player 2";
+            timer.countDownDisplay.text = "P2 WIN";
             Destroy(other.gameObject);
         }
         else
         {
-            timer.countDownDisplay.text = "Player 1";
+            timer.countDownDisplay.text = "P1 WIN";
             Destroy(other.gameObject);
         }
 
 
         timer.countDownTime = 0;
-        timer.StartCoroutine(timer.CountDownToEnd()); 
+        timer.StartCoroutine(timer.CountDownToEnd());
         SceneManager.LoadScene(3);
     }
 
