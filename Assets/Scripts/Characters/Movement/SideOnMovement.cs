@@ -59,7 +59,7 @@ public class SideOnMovement : MonoBehaviour {
     }
 
     void Jump() {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.3f);
 
         // Out of Range Excpetion Check
         if(!hit) {
