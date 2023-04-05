@@ -13,12 +13,19 @@ public class WHMasterObject : MonoBehaviour
     public bool p1Turn = false;
     public bool p2Turn = false;
     public bool gameOver = false;
-    
+
+    public GameObject p1ControlSpriteObject;
+    public SpriteRenderer p1ControlSprite;
+    public GameObject p2ControlSpriteObject;
+    public SpriteRenderer p2ControlSprite;
+
     void Start()
     {
         //Player 1 starts
         p1Turn = true; p2Turn = false;
         p1Text.SetText("Player 1 Turn");
+        p1ControlSprite = p1ControlSpriteObject.GetComponent<SpriteRenderer>();
+        p2ControlSprite = p2ControlSpriteObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -57,6 +64,8 @@ public class WHMasterObject : MonoBehaviour
             p1Jug.turnOver = false;
             p1Text.SetText("");
             p2Text.SetText("Player 2 Turn");
+            p1ControlSprite.enabled = false;
+            p2ControlSprite.enabled = true;
         }
 
         //Once Player2 is finished their turn, the parameters that allow they to play are
@@ -67,6 +76,8 @@ public class WHMasterObject : MonoBehaviour
             p2Jug.turnOver = false;
             p2Text.SetText("");
             p1Text.SetText("Player 1 Turn");
+            p2ControlSprite.enabled = false;
+            p1ControlSprite.enabled = true;
         }
         
     }

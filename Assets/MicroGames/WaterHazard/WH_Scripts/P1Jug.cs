@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,9 +17,13 @@ public class P1Jug : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip p1Pour;
     public bool playAudio = false;
+
+
     void Start()
     {
         P1JugRenderer = GetComponent<SpriteRenderer>();
+        
+        
     }
 
     void Update()
@@ -36,6 +41,8 @@ public class P1Jug : MonoBehaviour
             AnimateP1JugStart();
             GetComponentInParent<CupScript>().cupCapacity += cupFillSpeed *Time.deltaTime;
             playAudio = true;
+            
+            
         }
         //Once Player 1 releases D, the sprite returns to normal and changes the 
         //bool being observed by the MasterObject that determines whether its 
@@ -46,6 +53,7 @@ public class P1Jug : MonoBehaviour
             startAnimDummy = true;
             turnOver = true;
             playAudio = false;
+            
         }
         if(playAudio == true)
         {
