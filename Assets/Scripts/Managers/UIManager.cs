@@ -43,14 +43,16 @@ public class UIManager : MonoBehaviour {
         // This loads the Main Menu from the Master Scene when the game starts
         EventManager.instance.UpdateUI(1);
 
-        // UI Events for Banana Pistols at Dawn
+        #region Banana Pistol at Dawn Events
         EventManager.instance.DisplayPlayerInput_BPAD += BPAD_DisplayPlayerInput;
         EventManager.instance.DisplayAlert_BPAD += BPAD_CallDrawAlert;
         EventManager.instance.DisplayWinner_BPAD += BPAD_DisplayWinner;
+        #endregion
 
-        // UI Events for Food Fall Frenzy
+        #region Food Fall Frenzy Events
         EventManager.instance.OnCollectFood_FFF += FFF_UpdatePlayerScore;
         EventManager.instance.DisplayWinner_FFF += FFF_DisplayWinner;
+        #endregion
     }
 
     void UnloadExisitingUI(int sceneIndex) {
@@ -73,11 +75,23 @@ public class UIManager : MonoBehaviour {
         // IMPORTANT!!! The order of the array must be the exact same order as the scene heirarchy
         SceneUI[sceneIndex - 1].SetActive(true);
 
+        // If Banana Pistols at Dawn is Loaded, then reset the games UI and start fresh
+        if (sceneIndex == 5) BPAD_ResetUI();
+    }
+
+    #region BananaPistolsAtDawn Functions
+    void BPAD_ResetUI() {
+        foreach (Image item in spriteDisplay) {
+            item.enabled = false;
+        }
+
+        foreach (Text items in BPAD_Text) {
+            items.GetComponent<Text>().text = null;
+        }
 
         BPAD_Text[0].text = "Be Ready!";
     }
 
-    #region BananaPistolsAtDawn Functions
     void BPAD_CallDrawAlert() {
         BPAD_Text[0].text = "DRAW!";
         InputManager.instance.BPAD_EnablePlayerInput();
@@ -98,23 +112,22 @@ public class UIManager : MonoBehaviour {
     void BPAD_DisplayWinner(GameObject winner) {
         BPAD_Text[0].text = "Point to " + winner.name;
 
-        Invoke("BPAD_ResetUI", 5f);
-
-        BPAD_CheckForWinner(winner);
+        StartCoroutine(BPAD_CheckForWinner(winner));
     }
 
-    void BPAD_CheckForWinner(GameObject winner) {
-        if (BPAD.BPAD_Score.playerOnePoints == 3) {
+    IEnumerator BPAD_CheckForWinner(GameObject winner) {
+
+        // This is to allow the BPAD_Score script to update the players score before checking to see if any player has won
+        yield return new WaitForSeconds(0.01f);
+
+        if (BPAD.BPAD_Score.playerOnePoints == 3 || BPAD.BPAD_Score.playerTwoPoints == 3) {
             BPAD_Text[0].text = "Winner: " + winner.name;
 
-            Invoke("BackToMenu", 5f);
+            BPAD.BPAD_Score.playerOnePoints = 0;
+            BPAD.BPAD_Score.playerTwoPoints = 0;
 
-        }
-        
-        if (BPAD.BPAD_Score.playerTwoPoints == 3) {
-            BPAD_Text[0].text = "Winner: " + winner.name;
-
-            Invoke("BackToMenu", 5f);
+            Invoke("DestroySkulls", 5f);
+            Invoke("BackToMenu", 5f); 
         }
         
         else {
@@ -122,18 +135,17 @@ public class UIManager : MonoBehaviour {
         }
     }
 
-    void BPAD_ResetUI() {
-        foreach (Image item in spriteDisplay) {
-            item.enabled = false;
-        }
+    void DestroySkulls() {
+        GameObject[] skulls = GameObject.FindGameObjectsWithTag("BPAD_Skull");
 
-        foreach (Text items in BPAD_Text) {
-            items.GetComponent<Text>().text = null;
+        foreach (GameObject item in skulls) {
+            Destroy(item);
         }
     }
 
     void BPAD_ResetGame() {
-        EventManager.instance.UpdateUI(currentScene);
+        BPAD_ResetUI();
+        SceneManager.LoadScene(currentScene);
     }
     #endregion
 
@@ -168,10 +180,7 @@ public class UIManager : MonoBehaviour {
     #endregion
 
     void BackToMenu() {
-        BPAD.BPAD_Score.playerOnePoints = 0;
-        BPAD.BPAD_Score.playerTwoPoints = 0;
-
-        FFF_Header.GetComponent<Text>().text = null;
+        // Move to LoadSceneUI() -> FFF_Header.GetComponent<Text>().text = null;
 
         EventManager.instance.UpdateUI(3);
     }

@@ -35,10 +35,19 @@ namespace BPAD {
             if (winner.name == "Player One") {
                 speechBubbles[0].GetComponent<Image>().enabled = true;
                 speechBubbles[0].GetComponentInChildren<Text>().text = oneLiners[line];
-            } else {
+            }
+            
+            else {
                 speechBubbles[1].GetComponent<Image>().enabled = true;
                 speechBubbles[1].GetComponentInChildren<Text>().text = oneLiners[line];
             }
+
+            Invoke("HideSpeechBubble", 5f);
+        }
+
+        void HideSpeechBubble() {
+            speechBubbles[0].GetComponent<Image>().enabled = false;
+            speechBubbles[1].GetComponent<Image>().enabled = false;
         }
 
         private void OnDisable() {

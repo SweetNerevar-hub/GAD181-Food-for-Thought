@@ -18,17 +18,21 @@ namespace BPAD {
         void UpdatePlayerScore(GameObject winner) {
             if(winner.name == "Player One" && playerOnePoints < 3) {
                 playerOnePoints++;
-                Instantiate(skull, new Vector2(skullSpawnPoints[0].transform.position.x + (25 * playerOnePoints), skullSpawnPoints[0].transform.position.y), Quaternion.identity, skullSpawnPoints[0]);
+
+                float padding = Screen.width / (skull.GetComponent<RectTransform>().rect.width / 2);
+
+                Vector2 skullPosition = new Vector2(skullSpawnPoints[0].position.x + (padding * playerOnePoints), skullSpawnPoints[0].position.y);
+                Instantiate(skull, skullPosition, Quaternion.identity, skullSpawnPoints[0]);
             }
             
             else if(winner.name == "Player Two" && playerTwoPoints < 3) {
                 playerTwoPoints++;
 
-                //Instantiate(skull, skullSpawnPoints[1].position, Quaternion.identity);
-            }
+                float padding = Screen.width / (skull.GetComponent<RectTransform>().rect.width / 2);
 
-            Debug.Log("P1: " + playerOnePoints);
-            Debug.Log("P2: " + playerTwoPoints);
+                Vector2 skullPosition = new Vector2(skullSpawnPoints[1].position.x + (padding * playerTwoPoints), skullSpawnPoints[1].position.y);
+                Instantiate(skull, skullPosition, Quaternion.identity, skullSpawnPoints[1]);
+            }
         }
 
         private void OnDisable() {
