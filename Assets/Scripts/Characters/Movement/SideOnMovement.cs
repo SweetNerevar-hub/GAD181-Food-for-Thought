@@ -9,7 +9,6 @@ public class SideOnMovement : MonoBehaviour {
     public bool playerOne;
     public float jumpForce, speed;
     
-    
     private Animator animator;
 
     // Start is called before the first frame update
@@ -25,16 +24,23 @@ public class SideOnMovement : MonoBehaviour {
     }
 
     private void Update() {
+        UpdateAnimations();
+        PlayerInputCheck();
+    }
+
+    void UpdateAnimations() {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.3f);
-       if(!hit)
-        {
+        int h = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
+
+        animator.SetInteger("Horizontal", h);
+
+        if (!hit) {
             animator.SetBool("Jumping", true);
         }
-        else if(hit.collider.tag == "Ground")
-        {
+        
+        else if (hit.collider.tag == "Ground") {
             animator.SetBool("Jumping", false);
         }
-        PlayerInputCheck();
     }
 
     void PlayerInputCheck() {
