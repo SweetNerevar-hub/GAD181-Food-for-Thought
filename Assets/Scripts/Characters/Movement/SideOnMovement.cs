@@ -41,7 +41,7 @@ public class SideOnMovement : MonoBehaviour {
         switch (playerOne) {
             case true:
                 if (Input.GetKeyDown(KeyCode.Space)) {
-                    Jump();
+                   Jump();
                 }
 
                 if (Input.GetKey(KeyCode.A)) {
@@ -50,6 +50,10 @@ public class SideOnMovement : MonoBehaviour {
 
                 else if (Input.GetKey(KeyCode.D)) {
                     Movement(Vector2.right);
+                }
+
+                else if(!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D)) {
+                    Movement(Vector2.zero);
                 }
 
                 break;
@@ -66,23 +70,24 @@ public class SideOnMovement : MonoBehaviour {
                 else if (Input.GetKey(KeyCode.RightArrow)) {
                     Movement(Vector2.right);
                 }
+                
+                else if (!Input.GetKey(KeyCode.LeftApple) || !Input.GetKey(KeyCode.RightArrow)) {
+                    Movement(Vector2.zero);
+                }
 
                 break;
-        }
+        }        
     }
 
     void Jump() {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.3f);
-        // Out of Range Excpetion Check
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f);
+
         if (!hit) {
-           // animator.SetBool("Jumping", true);
             return;
         }
 
-        // Is used to make sure the player is touching the ground before being able to jump again
-        if(hit.collider.tag == "Ground") {
+        else if(hit.collider.tag == "Ground") {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-           // animator.SetBool("Jumping", false);
         }
       
     }
