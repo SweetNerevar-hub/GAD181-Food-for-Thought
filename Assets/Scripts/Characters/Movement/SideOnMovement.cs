@@ -8,10 +8,14 @@ public class SideOnMovement : MonoBehaviour {
 
     public bool playerOne;
     public float jumpForce, speed;
+    
+    
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         /*
         InputManager.instance.Jump += Jump;
@@ -21,6 +25,15 @@ public class SideOnMovement : MonoBehaviour {
     }
 
     private void Update() {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.3f);
+       if(!hit)
+        {
+            animator.SetBool("Jumping", true);
+        }
+        else if(hit.collider.tag == "Ground")
+        {
+            animator.SetBool("Jumping", false);
+        }
         PlayerInputCheck();
     }
 
@@ -59,18 +72,19 @@ public class SideOnMovement : MonoBehaviour {
     }
 
     void Jump() {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f);
-
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.3f);
         // Out of Range Excpetion Check
-        if(!hit) {
+        if (!hit) {
+           // animator.SetBool("Jumping", true);
             return;
         }
 
         // Is used to make sure the player is touching the ground before being able to jump again
         if(hit.collider.tag == "Ground") {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
+           // animator.SetBool("Jumping", false);
         }
+      
     }
 
     void Movement(Vector2 dir) {
