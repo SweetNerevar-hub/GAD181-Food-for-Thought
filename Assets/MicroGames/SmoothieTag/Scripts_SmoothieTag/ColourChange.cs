@@ -13,7 +13,7 @@ public class ColourChange : MonoBehaviour
 
     private void Start()
     {
-       // render = GetComponentInChildren<SpriteRenderer>();
+      
     }
 
 

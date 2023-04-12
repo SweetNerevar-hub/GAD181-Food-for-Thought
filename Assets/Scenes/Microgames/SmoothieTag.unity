@@ -371,6 +371,10 @@ PrefabInstance:
       value: Player_1
       objectReference: {fileID: 0}
     - target: {fileID: 7805006732111348241, guid: 96d0bec8e07255a4c9f1c39addb923f1, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1513012503}
+    - target: {fileID: 7805006732111348241, guid: 96d0bec8e07255a4c9f1c39addb923f1, type: 3}
       propertyPath: jumpForce
       value: 25
       objectReference: {fileID: 0}
@@ -1200,6 +1204,10 @@ PrefabInstance:
     - target: {fileID: 2885892122908152758, guid: 1a6f3bf466a4df74d80acfc9621f078a, type: 3}
       propertyPath: m_Name
       value: Player_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885892122908152758, guid: 1a6f3bf466a4df74d80acfc9621f078a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2885892122908152760, guid: 1a6f3bf466a4df74d80acfc9621f078a, type: 3}
       propertyPath: m_IsTrigger

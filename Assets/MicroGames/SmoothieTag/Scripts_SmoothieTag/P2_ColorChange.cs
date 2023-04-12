@@ -13,7 +13,7 @@ public class P2_ColorChange : MonoBehaviour
 
     private void Start()
     {
-       // render = GetComponentInChildren<SpriteRenderer>();
+      
     }
 
 
