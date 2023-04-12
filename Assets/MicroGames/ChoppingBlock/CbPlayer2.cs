@@ -12,6 +12,9 @@ public class CbPlayer2 : MonoBehaviour
     public bool p2Dummy = false;
     public int p2InputCount = 0;
     public AudioSource p2Chop;
+
+    public SpriteRenderer p2BackgroundRenderer;
+    public List<Sprite> p2BackgroundSprite;
     // Start is called before the first frame update
     void Start()
     {
