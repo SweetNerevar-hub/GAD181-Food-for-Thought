@@ -30,7 +30,7 @@ public class DeathZone : MonoBehaviour
 
         timer.countDownTime = 0;
         timer.StartCoroutine(timer.CountDownToEnd());
-        SceneManager.LoadScene(3);
+        
     }
 
    

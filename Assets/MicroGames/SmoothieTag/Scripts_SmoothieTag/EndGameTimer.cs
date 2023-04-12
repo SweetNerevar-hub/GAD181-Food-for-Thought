@@ -21,14 +21,14 @@ public class EndGameTimer : MonoBehaviour
         while (countDownTime > 0)
         {
             countDownDisplay.text = countDownTime.ToString();
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(1f);
 
             countDownTime--;
         }
 
         PlayerOneWin();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(3);
 
         countDownDisplay.gameObject.SetActive(false);
