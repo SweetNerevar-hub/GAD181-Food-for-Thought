@@ -12,6 +12,10 @@ public class CbPlayer2 : MonoBehaviour
     public bool p2Dummy = false;
     public int p2InputCount = 0;
     public AudioSource p2Chop;
+
+    public SpriteRenderer p2BackgroundRenderer;
+    public List<Sprite> p2BackgroundSprite;
+    public int p2BackgroundFrame = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,9 @@ public class CbPlayer2 : MonoBehaviour
         p2FirstInputDetected = false;
         p2Dummy = false;
         p2InputCount = 0;
+
+        p2BackgroundRenderer = GetComponentInChildren<SpriteRenderer>();
+        p2BackgroundFrame = 0;
     }
 
     // Update is called once per frame
@@ -28,6 +35,8 @@ public class CbPlayer2 : MonoBehaviour
         MasterObjectScript masterObjectScript = GetComponentInParent<MasterObjectScript>();
         if (masterObjectScript.gameOver == false)
         {
+
+
             if (p2InputCount <= 10)
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow))
