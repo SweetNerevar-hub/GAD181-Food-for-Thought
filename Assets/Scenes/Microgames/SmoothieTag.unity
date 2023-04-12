@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ca70d52369c6b4f886913d2853c535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBlood: {fileID: 0}
+  playerBlood: {fileID: 5677151604392294793, guid: ae7be3199aacfae4ab09486df3200aba, type: 3}
   render: {fileID: 1040901596}
   isTagged: 0
 --- !u!95 &1201019791

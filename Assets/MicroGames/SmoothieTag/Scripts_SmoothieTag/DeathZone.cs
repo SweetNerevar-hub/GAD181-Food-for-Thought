@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DeathZone : MonoBehaviour
 {
-    //public GameObject playerBlood;
+    public GameObject playerBlood;
     private EndGameTimer timer;
     private void Start()
     {
@@ -15,7 +15,7 @@ public class DeathZone : MonoBehaviour
     //script kills players on fall in zone.
     void OnTriggerEnter2D(Collider2D other)
     {
-       //Instantiate(playerBlood, transform.position, Quaternion.identity);
+       Instantiate(playerBlood, transform.position, Quaternion.identity);
 
         if(!timer.PlayerOneWin())
         {
