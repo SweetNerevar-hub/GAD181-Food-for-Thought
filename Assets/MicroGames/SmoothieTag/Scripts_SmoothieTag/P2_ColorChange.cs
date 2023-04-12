@@ -6,8 +6,8 @@ public class P2_ColorChange : MonoBehaviour
 {
 
 
-
-   public SpriteRenderer render;
+    public GameObject playerBlood;
+    public SpriteRenderer render;
 
     public bool isTagged;
 
@@ -31,6 +31,8 @@ public class P2_ColorChange : MonoBehaviour
                 render.color = Color.red;
                 isTagged = false;
             }
+
+            Instantiate(playerBlood, transform.position, Quaternion.identity);
         }
     }
 }

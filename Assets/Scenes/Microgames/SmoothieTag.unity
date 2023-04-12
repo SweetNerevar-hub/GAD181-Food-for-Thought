@@ -961,6 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ca70d52369c6b4f886913d2853c535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBlood: {fileID: 0}
   render: {fileID: 1040901596}
   isTagged: 0
 --- !u!95 &1201019791
@@ -1152,6 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64481b81f67f57c4e817d53018435b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBlood: {fileID: 7501072305473295998, guid: f1e447f6fe0c2b144887db5ee78f61c1, type: 3}
   render: {fileID: 484836667}
   isTagged: 0
 --- !u!95 &1513012503

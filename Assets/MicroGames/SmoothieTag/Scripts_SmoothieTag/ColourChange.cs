@@ -6,8 +6,8 @@ public class ColourChange : MonoBehaviour
 {
 
 
-
-  public  SpriteRenderer render;
+    public GameObject playerBlood;
+    public  SpriteRenderer render;
 
     public bool isTagged;
 
@@ -32,6 +32,8 @@ public class ColourChange : MonoBehaviour
                 render.color = Color.green;
                 isTagged = false;
             }
+
+            Instantiate(playerBlood, transform.position, Quaternion.identity);
         }
     }
 }
