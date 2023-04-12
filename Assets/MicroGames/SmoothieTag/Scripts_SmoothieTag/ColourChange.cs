@@ -8,6 +8,10 @@ public class ColourChange : MonoBehaviour
 
     public GameObject playerBlood;
 
+<<<<<<< HEAD
+=======
+    public GameObject playerBlood;
+>>>>>>> Kelecia'sBranch2
     public  SpriteRenderer render;
 
     public bool isTagged;
@@ -35,7 +39,10 @@ public class ColourChange : MonoBehaviour
             }
 
             Instantiate(playerBlood, transform.position, Quaternion.identity);
+<<<<<<< HEAD
 
+=======
+>>>>>>> Kelecia'sBranch2
         }
     }
 }
