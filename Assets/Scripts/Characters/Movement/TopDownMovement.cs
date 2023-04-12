@@ -7,7 +7,7 @@ public class TopDownMovement : MonoBehaviour {
 
     Rigidbody2D rb;
 
-    float h, v;
+    //float h, v;
 
     public float speed;
     public bool playerOne;

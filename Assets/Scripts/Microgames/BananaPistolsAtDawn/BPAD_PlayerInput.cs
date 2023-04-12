@@ -85,6 +85,7 @@ namespace BPAD {
             audioSource.PlayOneShot(audioSource.clip);
 
             EventManager.instance.BPAD_DisplayWinner(gameObject);
+
         }
 
         void UpdateAnimations() {
@@ -95,6 +96,7 @@ namespace BPAD {
 
             else {
                 animator.SetInteger("isWinner", -1);
+
             }
         }
 

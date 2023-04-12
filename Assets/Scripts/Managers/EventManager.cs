@@ -19,8 +19,8 @@ public class EventManager : MonoBehaviour {
 
     // Events for BananaPistolsAtDawn
     public event Action DisplayAlert_BPAD;
-    public event Action<GameObject> DisplayWinner_BPAD;
-    public event Action<int, int, bool> DisplayPlayerInput_BPAD;
+    public event Action <GameObject> DisplayWinner_BPAD;
+    public event Action <int, int, bool> DisplayPlayerInput_BPAD;
 
     // Events for FoodFallFrenzy
     public event Action<bool, GameObject> OnCollectFood_FFF;
