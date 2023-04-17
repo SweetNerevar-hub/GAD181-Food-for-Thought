@@ -15,7 +15,7 @@ public class InputManager : MonoBehaviour {
         }
     }
 
-    // Input Events for Banana Pistols at Dawn --
+    // Input Events for Banana Pistols at Dawn
     public event Action EnablePlayerInput_BPAD;
 
 

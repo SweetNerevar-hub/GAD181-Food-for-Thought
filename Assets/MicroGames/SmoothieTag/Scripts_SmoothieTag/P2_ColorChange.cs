@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.LowLevel;
 
 public class P2_ColorChange : MonoBehaviour
 {
 
-
     public GameObject playerBlood;
+
+<<<<<<< HEAD
+=======
+    public GameObject playerBlood;
+>>>>>>> Kelecia'sBranch2
     public SpriteRenderer render;
 
     public bool isTagged;
