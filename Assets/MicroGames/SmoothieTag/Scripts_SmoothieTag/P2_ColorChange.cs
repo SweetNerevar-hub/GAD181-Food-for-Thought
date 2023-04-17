@@ -7,11 +7,6 @@ public class P2_ColorChange : MonoBehaviour
 {
 
     public GameObject playerBlood;
-
-<<<<<<< HEAD
-=======
-    public GameObject playerBlood;
->>>>>>> Kelecia'sBranch2
     public SpriteRenderer render;
 
     public bool isTagged;
