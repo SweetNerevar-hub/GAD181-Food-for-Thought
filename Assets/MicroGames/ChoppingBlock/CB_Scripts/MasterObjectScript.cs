@@ -14,11 +14,13 @@ public class MasterObjectScript : MonoBehaviour
     public bool gameOver = false;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI timeLeft;
+    public TextMeshProUGUI p1ScoreDisplay;
+    public TextMeshProUGUI p2ScoreDisplay;
 
     public void Start()
     {
-
-        
+        p1ScoreDisplay.SetText("");
+        p2ScoreDisplay.SetText("");
     }
     void Update()
     {
@@ -30,8 +32,6 @@ public class MasterObjectScript : MonoBehaviour
         CbPlayer2 cbPlayer2 = GetComponentInChildren<CbPlayer2>();
         p2Score = cbPlayer2.p2InputCount;
         targetTime -= Time.deltaTime;
-
-        
 
         if (targetTime <= 0.0f)
         {
@@ -45,6 +45,8 @@ public class MasterObjectScript : MonoBehaviour
     {
         gameOver = true;
         timeLeft.SetText("");
+        p1ScoreDisplay.SetText("Player 1 Slices: " + p1Score);
+        p2ScoreDisplay.SetText("Player 2 Slices: " + p2Score);
         if (p1Score > p2Score)
         {
             timerText.SetText("Player 1 Wins!");
