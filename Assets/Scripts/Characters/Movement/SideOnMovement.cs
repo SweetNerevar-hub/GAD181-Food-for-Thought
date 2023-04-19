@@ -32,15 +32,18 @@ public class SideOnMovement : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.3f);
         int h = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
 
-        animator.SetInteger("Horizontal", h);
+       
 
         if (!hit) {
             animator.SetBool("Jumping", true);
+            Debug.Log("Jumping");
         }
         
         else if (hit.collider.tag == "Ground") {
             animator.SetBool("Jumping", false);
         }
+
+        animator.SetInteger("Horizontal", h);
     }
 
     void PlayerInputCheck() {
@@ -86,7 +89,7 @@ public class SideOnMovement : MonoBehaviour {
     }
 
     void Jump() {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.3f);
 
         if (!hit) {
             return;
