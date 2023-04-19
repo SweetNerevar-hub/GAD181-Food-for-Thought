@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b8ad3fa944c95cc4aa08d37a7d6d7822
+guid: 9de103838c9d1b74ebbb78bdda553909
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -153,7 +153,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player2Background_0
+      name: P2Background_0
       rect:
         serializedVersion: 2
         x: 0
@@ -167,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17aa255814e93ab4b9889e35bcb6f804
-      internalID: 168818592
+      spriteID: 5fde36e8d2d5a3c41b29d59918496381
+      internalID: -1069969416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player2Background_1
+      name: P2Background_1
       rect:
         serializedVersion: 2
         x: 5120
@@ -188,14 +188,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f7799d8133333d418af147d64483818
-      internalID: -2076595872
+      spriteID: 6ce18bb5cf8f14148a6c01855f7fdaa5
+      internalID: -2056056945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player2Background_2
+      name: P2Background_2
       rect:
         serializedVersion: 2
         x: 0
@@ -209,14 +209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 199092265ec17fc41925fa69770a16b1
-      internalID: 1520490050
+      spriteID: a7b103cf74bf3a34ebdb498a4688d8fe
+      internalID: -1819172249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player2Background_3
+      name: P2Background_3
       rect:
         serializedVersion: 2
         x: 5120
@@ -230,8 +230,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aafdfb2a768c77d42930aa4141fd8c84
-      internalID: -854685085
+      spriteID: d7e1d62014d63e04ea1ef44a2d63b146
+      internalID: 828319948
       vertices: []
       indices: 
       edges: []
@@ -247,10 +247,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player2Background_3: -854685085
-      Player2Background_2: 1520490050
-      Player2Background_0: 168818592
-      Player2Background_1: -2076595872
+      P2Background_1: -2056056945
+      P2Background_0: -1069969416
+      P2Background_3: 828319948
+      P2Background_2: -1819172249
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

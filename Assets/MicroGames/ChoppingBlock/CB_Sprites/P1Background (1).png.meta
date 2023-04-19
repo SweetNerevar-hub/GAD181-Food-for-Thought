@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c4aa9da92721e1c4186a29cf43a1ed14
+guid: 070499e7e59433547a1da44dae413394
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -153,7 +153,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: P1Background_0
+      name: P1Background (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -167,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63420bb47df784442bcc91c649f3a320
-      internalID: 1841709615
+      spriteID: c459e873f13cbea43ba2be41a75ad611
+      internalID: -1711559490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: P1Background_1
+      name: P1Background (1)_1
       rect:
         serializedVersion: 2
         x: 5120
@@ -188,14 +188,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b40bac0607867a64aa72ae682477d864
-      internalID: 1437814663
+      spriteID: 13c7cccedcf9e3a4c99a4756202f2694
+      internalID: 1666694910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: P1Background_2
+      name: P1Background (1)_2
       rect:
         serializedVersion: 2
         x: 0
@@ -209,14 +209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28765f99199ee824d96b6e3103724644
-      internalID: 1157216602
+      spriteID: d98b7a46ca4b0e34491d43d1f83e0bf9
+      internalID: -1638314482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: P1Background_3
+      name: P1Background (1)_3
       rect:
         serializedVersion: 2
         x: 5120
@@ -230,8 +230,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65b99ecc738541644945c198d3051aa3
-      internalID: -656947472
+      spriteID: 9f60f43487825db4fadae210f9b8a2fc
+      internalID: 1058054657
       vertices: []
       indices: 
       edges: []
@@ -247,10 +247,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      P1Background_1: 1437814663
-      P1Background_3: -656947472
-      P1Background_2: 1157216602
-      P1Background_0: 1841709615
+      P1Background (1)_2: -1638314482
+      P1Background (1)_3: 1058054657
+      P1Background (1)_1: 1666694910
+      P1Background (1)_0: -1711559490
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
