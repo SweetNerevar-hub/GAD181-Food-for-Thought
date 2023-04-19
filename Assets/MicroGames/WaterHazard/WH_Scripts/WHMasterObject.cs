@@ -13,6 +13,8 @@ public class WHMasterObject : MonoBehaviour
     public bool p1Turn = false;
     public bool p2Turn = false;
     public bool gameOver = false;
+    public bool p1Win = false;
+    public bool p2Win = false;
 
     public GameObject WHTutorialImage;
     public SpriteRenderer WHTutorialImageSprite;
@@ -31,6 +33,8 @@ public class WHMasterObject : MonoBehaviour
         p2Turn = false;
         gameOver = false;
         tutorialBool = true;
+        p1Win = false;
+        p2Win = false;
 
         //Coroutine that displays tutorial for 4 sec with player input disabled, 
         //then displays game and enables player 1 input.
@@ -49,6 +53,7 @@ public class WHMasterObject : MonoBehaviour
         {
             p1Turn = false; p2Turn = false;
             gameOver = true;
+            p2Win = true;
             p1Text.SetText("");
             p2Text.SetText("");
             winnerText.SetText("Player 2 Wins!");
@@ -60,6 +65,7 @@ public class WHMasterObject : MonoBehaviour
         {
             p1Turn = false; p2Turn = false;
             gameOver = true;
+            p1Win = true;
             p1Text.SetText("");
             p2Text.SetText("");
             winnerText.SetText("Player 1 Wins!");

@@ -24,5 +24,14 @@ public class P2Broc : MonoBehaviour
         {
             animator.SetBool("Player2Turn", false);
         }
+
+        if (wHMasterObject.p1Win == true)
+        {
+            animator.SetBool("Player2Lose", true);
+        }
+        if (wHMasterObject.p2Win == true)
+        {
+            animator.SetBool("Player2Win", true);
+        }
     }
 }
