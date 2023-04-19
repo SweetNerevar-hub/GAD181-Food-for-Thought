@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b8ad3fa944c95cc4aa08d37a7d6d7822
+guid: 9ce2040a6758b934695f2076fff708ca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -151,91 +151,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Player2Background_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2880
-        width: 5120
-        height: 2880
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17aa255814e93ab4b9889e35bcb6f804
-      internalID: 168818592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player2Background_1
-      rect:
-        serializedVersion: 2
-        x: 5120
-        y: 2880
-        width: 5120
-        height: 2880
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f7799d8133333d418af147d64483818
-      internalID: -2076595872
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player2Background_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 5120
-        height: 2880
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 199092265ec17fc41925fa69770a16b1
-      internalID: 1520490050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player2Background_3
-      rect:
-        serializedVersion: 2
-        x: 5120
-        y: 0
-        width: 5120
-        height: 2880
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aafdfb2a768c77d42930aa4141fd8c84
-      internalID: -854685085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -246,11 +162,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Player2Background_3: -854685085
-      Player2Background_2: 1520490050
-      Player2Background_0: 168818592
-      Player2Background_1: -2076595872
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
