@@ -120,7 +120,7 @@ public class MasterObjectScript : MonoBehaviour
 
     void BackToMenu()
     {
-        EventManager.instance.UpdateUI(3);
+        EventManager.instance.UpdateUI(2);
     }
 
 }
