@@ -143,7 +143,7 @@ public class WHMasterObject : MonoBehaviour
     //goes back to game selection 3 sec after game end
     void BackToMenu()
     {
-        EventManager.instance.UpdateUI(3);
+        EventManager.instance.UpdateUI(2);
     }
 
 }
