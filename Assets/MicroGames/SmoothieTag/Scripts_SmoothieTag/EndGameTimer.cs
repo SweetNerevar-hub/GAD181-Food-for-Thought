@@ -14,24 +14,34 @@ public class EndGameTimer : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(CountDownToEnd());
+
+    }
+    private void Update()
+    {
+      if(StartCount.isPlaying)
+        {
+            StartCoroutine(CountDownToEnd());
+        }
     }
     public IEnumerator CountDownToEnd()
     {
-        while (countDownTime > 0)
-        {
-            countDownDisplay.text = countDownTime.ToString();
-            yield return new WaitForSeconds(1f);
+        StartCount.isPlaying = false;
 
-            countDownTime--;
-        }
+            while (countDownTime > 0)
+            {
+                countDownDisplay.text = countDownTime.ToString();
+                yield return new WaitForSeconds(1f);
 
-        PlayerOneWin();
+                countDownTime--;
+            }
 
-        yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene(3);
+            PlayerOneWin();
 
-        countDownDisplay.gameObject.SetActive(false);
+            yield return new WaitForSeconds(4f);
+            SceneManager.LoadScene(3);
+
+            countDownDisplay.gameObject.SetActive(false);
+        
     }
 
     public bool PlayerOneWin()
