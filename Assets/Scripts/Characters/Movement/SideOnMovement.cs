@@ -5,11 +5,10 @@ using UnityEngine;
 public class SideOnMovement : MonoBehaviour {
 
     Rigidbody2D rb;
+    Animator animator;
 
     public bool playerOne;
     public float jumpForce, speed;
-    
-    private Animator animator;
 
     // Start is called before the first frame update
     void Start() {
@@ -24,26 +23,20 @@ public class SideOnMovement : MonoBehaviour {
     }
 
     private void Update() {
-        UpdateAnimations();
+        IsGroundedCheck();
         PlayerInputCheck();
     }
 
-    void UpdateAnimations() {
+    void IsGroundedCheck() {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.3f);
-        int h = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
-
-       
 
         if (!hit) {
             animator.SetBool("Jumping", true);
-            Debug.Log("Jumping");
         }
-        
+
         else if (hit.collider.tag == "Ground") {
             animator.SetBool("Jumping", false);
         }
-
-        animator.SetInteger("Horizontal", h);
     }
 
     void PlayerInputCheck() {
@@ -55,14 +48,20 @@ public class SideOnMovement : MonoBehaviour {
 
                 if (Input.GetKey(KeyCode.A)) {
                     Movement(Vector2.left);
+
+                    animator.SetInteger("Horizontal", -1);
                 }
 
                 else if (Input.GetKey(KeyCode.D)) {
                     Movement(Vector2.right);
+
+                    animator.SetInteger("Horizontal", 1);
                 }
 
                 else if(!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D)) {
                     Movement(Vector2.zero);
+
+                    animator.SetInteger("Horizontal", 0);
                 }
 
                 break;
@@ -74,14 +73,20 @@ public class SideOnMovement : MonoBehaviour {
 
                 if (Input.GetKey(KeyCode.LeftArrow)) {
                     Movement(Vector2.left);
+
+                    animator.SetInteger("Horizontal", -1);
                 }
 
                 else if (Input.GetKey(KeyCode.RightArrow)) {
                     Movement(Vector2.right);
+
+                    animator.SetInteger("Horizontal", 1);
                 }
                 
                 else if (!Input.GetKey(KeyCode.LeftApple) || !Input.GetKey(KeyCode.RightArrow)) {
                     Movement(Vector2.zero);
+
+                    animator.SetInteger("Horizontal", 0);
                 }
 
                 break;

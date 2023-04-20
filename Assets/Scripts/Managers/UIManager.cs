@@ -13,16 +13,18 @@ public class UIManager : MonoBehaviour {
 
     // Array of Scene UI's
     public GameObject[] SceneUI;
+    public GameObject fadeScreen;
+    public GameObject eventSystem;
 
     int currentScene;
+    float waitTime = 0.01f;
 
     #region BPAD_Variables
     public Text[] BPAD_Text; // 0 = Header, 1 = Player One Speech, 2 = Player 2 Speech
-    public Text[] playerPointsText;
     public Image[] spriteDisplay;
     #endregion
 
-    #region FoodFallFrenzy Variables
+    #region Food Fall Frenzy Variables
     public Text FFF_Header, Text_FFF_PlayerOneScore, Text_FFF_PlayerTwoScore;
     int FFF_playerOneScore, FFF_playerTwoScore;
     #endregion
@@ -36,9 +38,10 @@ public class UIManager : MonoBehaviour {
 
     private void Start() {
 
-        // When OnUpdateUI is called, call the UnloadExisitingUI function
-        // This is to stop UI's from different scenes overlapping
-        EventManager.instance.OnUpdateUI += UnloadExisitingUI;
+        // When the player trigger a scene change, call the FadeOut function
+        // Which will then lead into the FadeIn function, and then the LoadSceneUI function
+        EventManager.instance.OnUpdateUI += CallFadeOut;
+        EventManager.instance.OnScreenFade += CallFadeIn;
 
         // This loads the Main Menu from the Master Scene when the game starts
         EventManager.instance.UpdateUI(1);
@@ -55,31 +58,30 @@ public class UIManager : MonoBehaviour {
         #endregion
     }
 
-    void UnloadExisitingUI(int sceneIndex) {
+    void LoadSceneUI() {
 
-        // Unloads all UI on the Canvas
+        // Unloads all UI on the Canvas so as not to overlap with other scene's UI's
         foreach (GameObject element in SceneUI) {
             element.SetActive(false);
         }
 
-        LoadSceneUI(sceneIndex);
-        currentScene = sceneIndex;
-    }
-
-    void LoadSceneUI(int sceneIndex) {
-
-        // Loads the scene corresponding to the button clicked
-        SceneManager.LoadScene(sceneIndex);
+        // Loads the scene corresponding the sceneIndex variable which is stored when the OnUpdateUI event is triggered
+        SceneManager.LoadScene(currentScene);
 
         // Loads the relevant UI of the scene just loaded
         // IMPORTANT!!! The order of the array must be the exact same order as the scene heirarchy
-        SceneUI[sceneIndex - 1].SetActive(true);
+        SceneUI[currentScene - 1].SetActive(true);
+
+        // If Food Fall Frenzy is Loaded, then reset the game UI
+        if(currentScene == 3) FFF_Header.GetComponent<Text>().text = null;
 
         // If Banana Pistols at Dawn is Loaded, then reset the games UI and start fresh
-        if (sceneIndex == 5) BPAD_ResetUI();
+        if (currentScene == 4) BPAD_ResetUI();
     }
 
     #region BananaPistolsAtDawn Functions
+
+    // This resets the header text, the input display, and the one liners text and speech bubble image
     void BPAD_ResetUI() {
         foreach (Image item in spriteDisplay) {
             item.enabled = false;
@@ -97,6 +99,7 @@ public class UIManager : MonoBehaviour {
         InputManager.instance.BPAD_EnablePlayerInput();
     }
 
+    // Displays the required input for each player
     void BPAD_DisplayPlayerInput(int playerOneInput, int playerTwoInput, bool playerOne) {
         if (playerOne) {
             spriteDisplay[playerOneInput].enabled = true;
@@ -115,11 +118,12 @@ public class UIManager : MonoBehaviour {
         StartCoroutine(BPAD_CheckForWinner(winner));
     }
 
-    IEnumerator BPAD_CheckForWinner(GameObject winner) {
-
-        // This is to allow the BPAD_Score script to update the players score before checking to see if any player has won
+    // This is to allow the BPAD_Score script to update the players score before checking to see if any player has won
+    IEnumerator BPAD_CheckForWinner(GameObject winner) {      
         yield return new WaitForSeconds(0.01f);
 
+        // If a player has won the whole game
+        // Display that winner's name. then begin the reseting values, and removing UI elements
         if (BPAD.BPAD_Score.playerOnePoints == 3 || BPAD.BPAD_Score.playerTwoPoints == 3) {
             BPAD_Text[0].text = "Winner: " + winner.name;
 
@@ -131,10 +135,15 @@ public class UIManager : MonoBehaviour {
         }
         
         else {
+
+            // If no player has won the game
+            // Reset the scene, keeping all the important UI elements
             Invoke("BPAD_ResetGame", 5f);
         }
     }
 
+    // Triggers at the end of the game
+    // Removes the skull images so they don't show up if the player replays the game
     void DestroySkulls() {
         GameObject[] skulls = GameObject.FindGameObjectsWithTag("BPAD_Skull");
 
@@ -149,7 +158,10 @@ public class UIManager : MonoBehaviour {
     }
     #endregion
 
-    #region FoodFallFrenzy Functions
+    #region Food Fall Frenzy Functions
+
+    // This functions is called when a player collides with a food
+    // Triggering the associated event
     void FFF_UpdatePlayerScore(bool playerOne, GameObject food) {
         if (playerOne) {
             FFF_playerOneScore++;
@@ -162,6 +174,7 @@ public class UIManager : MonoBehaviour {
         }
     }
 
+    // Checks to see if any player has won
     void FFF_DisplayWinner() {
         if(FFF_playerOneScore > FFF_playerTwoScore) {
             FFF_Header.GetComponent<Text>().text = "Winner: Player One";
@@ -180,8 +193,55 @@ public class UIManager : MonoBehaviour {
     #endregion
 
     void BackToMenu() {
-        // Move to LoadSceneUI() -> FFF_Header.GetComponent<Text>().text = null;
+        EventManager.instance.UpdateUI(2);
+    }
 
-        EventManager.instance.UpdateUI(3);
+    void CallFadeOut(int sceneIndex) {
+        StartCoroutine(SceneFadeOut(sceneIndex));
+
+        // Disables to ability to trigger events when the fade-out has begun
+        // Such as the player clicking on a game too soon, before the fade-in has finished (doing this breaks the music switch)
+        eventSystem.SetActive(false);
+    }
+
+    void CallFadeIn() {
+        StartCoroutine(SceneFadeIn());
+    }
+
+    // Increases the alpha channel on a black image
+    IEnumerator SceneFadeOut(int sceneIndex) {
+        float screenAlpha = fadeScreen.GetComponent<Image>().color.a;
+
+        // Stores the sceneIndex into a global variable
+        // So the script doesn't have play hot potato with the sceneIndex value, passing it between too many functions
+        currentScene = sceneIndex;
+
+        while (screenAlpha < 1) {
+            screenAlpha += waitTime;
+            fadeScreen.GetComponent<Image>().color = new Color(0, 0, 0, screenAlpha);
+
+            yield return new WaitForSeconds(waitTime);
+        }
+
+        // After the scene has faded out, trigger the event to fade the new scene in
+        EventManager.instance.ScreenFade();
+    }
+
+    IEnumerator SceneFadeIn() {
+
+        // Loads the new scene before it begins to fade-in
+        LoadSceneUI();
+
+        float screenAlpha = fadeScreen.GetComponent<Image>().color.a;
+
+        while (screenAlpha > 0) {
+            screenAlpha -= waitTime;
+            fadeScreen.GetComponent<Image>().color = new Color(0, 0, 0, screenAlpha);
+
+            yield return new WaitForSeconds(waitTime);
+        }
+
+        // Enables the ability to trigger events after the fade-in has completed
+        eventSystem.SetActive(true);
     }
 }

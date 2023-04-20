@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         yield return new WaitForSeconds(1);
-        EventManager.instance.UpdateUI(3);
+        EventManager.instance.UpdateUI(2);
         
     }
     
