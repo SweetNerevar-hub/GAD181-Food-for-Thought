@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SideOnMovement : MonoBehaviour {
 
     Rigidbody2D rb;
     Animator animator;
+    AudioSource audioSource;
+
+    public AudioClip[] playerSFX;
+    public GameObject destroyFoodParticles;
 
     public bool playerOne;
     public float jumpForce, speed;
@@ -14,6 +19,7 @@ public class SideOnMovement : MonoBehaviour {
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         /*
         InputManager.instance.Jump += Jump;
@@ -102,6 +108,7 @@ public class SideOnMovement : MonoBehaviour {
 
         else if(hit.collider.tag == "Ground") {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            audioSource.PlayOneShot(playerSFX[0]);
         }
       
     }
@@ -113,6 +120,9 @@ public class SideOnMovement : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col) {
         if(col.tag == "FFF_CollectableFood") {
             EventManager.instance.FFF_CollectFood(playerOne, col.gameObject);
+
+            audioSource.PlayOneShot(playerSFX[1]);
+            Instantiate(destroyFoodParticles, transform.position, Quaternion.identity, transform);
         }
     }
 

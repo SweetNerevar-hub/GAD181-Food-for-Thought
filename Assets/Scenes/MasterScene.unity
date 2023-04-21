@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -1492,7 +1492,7 @@ MonoBehaviour:
   musicClips:
   - {fileID: 0}
   - {fileID: 8300000, guid: 27e8a4b4bce04b4498ba10ab3fb2bde3, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 747a0c2d7fec71147ad234efb5214a21, type: 3}
   - {fileID: 8300000, guid: d9cb0ad45c2bcad49ab697e7ab52348b, type: 3}
   - {fileID: 0}
   - {fileID: 0}
@@ -3051,7 +3051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1922996904
 RectTransform:
   m_ObjectHideFlags: 0
