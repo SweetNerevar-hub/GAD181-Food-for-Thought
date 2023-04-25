@@ -16,6 +16,7 @@ public class EventManager : MonoBehaviour {
     }
 
     public event Action<int> OnUpdateUI;
+    public event Action<int> OnPlayTutorial;
     public event Action OnScreenFade;
 
     // Events for BananaPistolsAtDawn
@@ -33,6 +34,10 @@ public class EventManager : MonoBehaviour {
 
     public void ScreenFade() {
         OnScreenFade?.Invoke();
+    }
+
+    public void PlayVideoTutorial(int sceneIndex) {
+        OnPlayTutorial?.Invoke(sceneIndex);
     }
 
     #region Event Functions for BananaPistolsAtDawn

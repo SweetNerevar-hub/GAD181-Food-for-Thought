@@ -1,8 +1,6 @@
 using BPAD;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Transactions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -73,10 +71,17 @@ public class UIManager : MonoBehaviour {
         SceneUI[currentScene - 1].SetActive(true);
 
         // If Food Fall Frenzy is Loaded, then reset the game UI
-        if(currentScene == 3) FFF_Header.GetComponent<Text>().text = null;
+        // Call the event that triggers to play the video tutorial
+        if(currentScene == 3) {
+            FFF_Header.GetComponent<Text>().text = null;
+            EventManager.instance.PlayVideoTutorial(currentScene);
+        }
 
         // If Banana Pistols at Dawn is Loaded, then reset the games UI and start fresh
-        if (currentScene == 4) BPAD_ResetUI();
+        if (currentScene == 4) {
+            BPAD_ResetUI();
+            EventManager.instance.PlayVideoTutorial(currentScene);
+        }
     }
 
     #region BananaPistolsAtDawn Functions

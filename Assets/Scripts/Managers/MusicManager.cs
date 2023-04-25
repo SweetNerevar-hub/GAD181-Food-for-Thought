@@ -8,7 +8,6 @@ public class MusicManager : MonoBehaviour {
     public static MusicManager instance;
 
     AudioSource audioSource;
-    public AudioMixer audioMixer;
     public AudioClip[] musicClips;
 
     float waitTime = 0.01f;
@@ -31,6 +30,8 @@ public class MusicManager : MonoBehaviour {
     }
 
     void CallFadeAudioOut(int sceneIndex) {
+        if (musicClips[sceneIndex - 1] == null) return;
+
         StartCoroutine(FadeAudioOut(sceneIndex));
     }
 
@@ -53,7 +54,7 @@ public class MusicManager : MonoBehaviour {
         while (audioSource.volume < 0.99f) {
             audioSource.volume += waitTime;
 
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSecondsRealtime(waitTime);
         }
     }
 }

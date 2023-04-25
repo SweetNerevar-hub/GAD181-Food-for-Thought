@@ -73,7 +73,7 @@ public class SideOnMovement : MonoBehaviour {
                 break;
 
             case false:
-                if (Input.GetKeyDown(KeyCode.RightShift)) {
+                if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.RightControl)) {
                     Jump();
                 }
 
@@ -108,7 +108,9 @@ public class SideOnMovement : MonoBehaviour {
 
         else if(hit.collider.tag == "Ground") {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            audioSource.PlayOneShot(playerSFX[0]);
+
+            // Play this character jump sound effect only if the audio clip exists (only applicable to Food Fall Frenzy)
+            if (playerSFX[0]) audioSource.PlayOneShot(playerSFX[0]);
         }
       
     }
