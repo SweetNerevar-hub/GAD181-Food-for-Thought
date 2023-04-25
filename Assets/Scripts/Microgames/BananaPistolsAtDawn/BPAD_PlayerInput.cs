@@ -9,11 +9,15 @@ namespace BPAD {
         Animator animator;
 
         static bool inputEnabled, gameOver;
+        bool correctInput, isWinner;
+        int playerOne_RandomlyChosenKey, playerTwo_RandomlyChosenKey;
 
         string[] avaliableKeys = new string[] { "a", "d", "j", "l" };
 
-        public bool playerOne, correctInput, isWinner;
-        public int playerOne_RandomlyChosenKey, playerTwo_RandomlyChosenKey;
+        public bool playerOne;
+
+        public GameObject bloodEffect;
+        public Transform bloodSpawn;
 
         // Start is called before the first frame update
         void Start() {
@@ -21,7 +25,9 @@ namespace BPAD {
             gameOver = false;
 
             animator = GetComponent<Animator>();
+
             InputManager.instance.EnablePlayerInput_BPAD += EnablePlayerInput;
+            EventManager.instance.DisplayWinner_BPAD += SpawnBloodEffect;
         }
 
         private void Update() {
@@ -88,20 +94,21 @@ namespace BPAD {
 
         }
 
+        void SpawnBloodEffect(GameObject winner) {
+            if (gameObject != winner) {
+                Instantiate(bloodEffect, bloodSpawn.position, Quaternion.identity, transform);
+            }
+        }
+
         void UpdateAnimations() {
-            if (isWinner) { 
-                animator.SetInteger("isWinner", 1);
+            if (isWinner) animator.SetInteger("isWinner", 1);
 
-            }
-
-            else {
-                animator.SetInteger("isWinner", -1);
-
-            }
+            else animator.SetInteger("isWinner", -1);
         }
 
         private void OnDisable() {
             InputManager.instance.EnablePlayerInput_BPAD -= EnablePlayerInput;
+            EventManager.instance.DisplayWinner_BPAD -= SpawnBloodEffect;
         }
     }
 }
