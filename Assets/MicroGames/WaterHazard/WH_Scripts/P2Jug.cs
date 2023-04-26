@@ -47,9 +47,11 @@ public class P2Jug : MonoBehaviour
             turnOver = true;
             playAudio = false;
         }
-        if (playAudio == true)
+        if (playAudio == true && !audioSource.isPlaying)
         {
+            audioSource.volume *= 3;
             audioSource.PlayOneShot(p2Pour);
+            Debug.Log("audio start");
         }
         else if (!playAudio)
         {
