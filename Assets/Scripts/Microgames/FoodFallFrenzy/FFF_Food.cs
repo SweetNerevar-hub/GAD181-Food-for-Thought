@@ -11,7 +11,7 @@ namespace FoodFallFrenzy {
         private void Start() {
             EventManager.instance.OnCollectFood_FFF += DestroyFood;
 
-            fallSpeed = 5;
+            fallSpeed = 7;
             lifeSpan = 5;
 
             StartCoroutine(FoodLifeSpan(lifeSpan));

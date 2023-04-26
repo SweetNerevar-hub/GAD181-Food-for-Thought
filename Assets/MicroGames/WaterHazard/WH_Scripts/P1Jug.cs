@@ -55,9 +55,11 @@ public class P1Jug : MonoBehaviour
             playAudio = false;
             
         }
-        if(playAudio == true)
+        if(playAudio == true && !audioSource.isPlaying)
         {
+            audioSource.volume *= 3;
             audioSource.PlayOneShot(p1Pour);
+            Debug.Log("audio start");
         }
         else if(!playAudio)
         {
