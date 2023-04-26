@@ -33,7 +33,7 @@ public class CbPlayer1 : MonoBehaviour
     void Update()
     {
         MasterObjectScript masterObjectScript = GetComponentInParent<MasterObjectScript>();
-        if (masterObjectScript.gameOver == false)
+        if (masterObjectScript.gameOver == false && masterObjectScript.tutorialBool == false)
         {
             if (p1BackgroundFrame >= 4)
             {

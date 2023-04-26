@@ -27,20 +27,21 @@ public class EndGameTimer : MonoBehaviour
     {
         StartCount.isPlaying = false;
 
-            while (countDownTime > 0)
-            {
-                countDownDisplay.text = countDownTime.ToString();
-                yield return new WaitForSeconds(1f);
+        while (countDownTime > 0)
+        {
+            countDownDisplay.text = countDownTime.ToString();
+            yield return new WaitForSeconds(1f);
 
-                countDownTime--;
-            }
+            countDownTime--;
+        }
 
-            PlayerOneWin();
+        PlayerOneWin();
 
-            yield return new WaitForSeconds(4f);
-            SceneManager.LoadScene(3);
+        yield return new WaitForSeconds(4f);
 
-            countDownDisplay.gameObject.SetActive(false);
+        EventManager.instance.UpdateUI(2);
+
+        countDownDisplay.gameObject.SetActive(false);
         
     }
 

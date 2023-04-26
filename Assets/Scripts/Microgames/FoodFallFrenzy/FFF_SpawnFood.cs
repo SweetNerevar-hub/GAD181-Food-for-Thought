@@ -8,10 +8,12 @@ namespace FoodFallFrenzy {
         public GameObject[] spawnPoints;
         public GameObject[] food;
 
-        public int gameTimer;
+        [SerializeField] List<int> previousSpawns = new List<int>();
+
+        int gameTimer;
 
         private void Start() {
-            gameTimer = 30;
+            gameTimer = 60;
 
             StartCoroutine(FoodSpawnerTimer());
         }
@@ -19,6 +21,28 @@ namespace FoodFallFrenzy {
         void SpawnFood() {
             int spawnPoint = Random.Range(0, spawnPoints.Length);
             int randomFood = Random.Range(0, food.Length);
+
+            #region PreviousSpawns List Manager
+
+            // This is a spawn system that emulates grabbing marbles from a bag
+            // When a certain spawn location has been used, remove it from the pool of useable locations
+            // When there are no more unique spawn locations, make them all avaliable again, and repeat
+
+            // If the PreviousSpawns list contains an integer that corresponds to the randomly chose spawn location integer
+            // Then don't spawn the food and restart the function
+            if (previousSpawns.Contains(spawnPoint)) {
+                SpawnFood();
+
+                return;
+            }
+
+            // Otherwise add that integer to the list and spawn the food
+            else previousSpawns.Add(spawnPoint);
+
+            // If all the spawn locations have been used up
+            // Then clear the list and start fresh
+            if (previousSpawns.Count == spawnPoints.Length) previousSpawns.Clear();
+            #endregion
 
             Instantiate(food[randomFood], spawnPoints[spawnPoint].transform.position, Quaternion.identity);
         }
@@ -31,12 +55,15 @@ namespace FoodFallFrenzy {
                 yield return new WaitForSeconds(1);
             }
 
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(5);
 
             EventManager.instance.FFF_DisplayWinner();
-
-            yield return null;
         }
     }
 }
+
+// For Faster Gameplay -- Have this be tested
+// gameTimer = 120
+// time between food spawns is 0.5
+// and in the Food script, set fallspeed higher
 

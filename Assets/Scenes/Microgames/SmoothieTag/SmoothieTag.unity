@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_1 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6359200651729801009, guid: 6489d4eab677c3640bf42c7b045bc850, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 945cfc18bcd4e4c4d8c5ec59c1827a3c, type: 2}
     - target: {fileID: 6359200651729801012, guid: 6489d4eab677c3640bf42c7b045bc850, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -343,7 +347,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &223392516
 RectTransform:
@@ -618,6 +622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_2 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1326077100313503593, guid: 873e564f659557c49a4e17c089952a57, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 945cfc18bcd4e4c4d8c5ec59c1827a3c, type: 2}
     - target: {fileID: 1326077100313503596, guid: 873e564f659557c49a4e17c089952a57, type: 3}
       propertyPath: m_RootOrder
       value: 6
