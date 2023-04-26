@@ -10,6 +10,7 @@ public class MasterObjectScript : MonoBehaviour
     public int p2Score;
 
     public float targetTime = 11f;
+    private float countdown = 4;
     
     public bool gameOver = false;
     public bool p1Win = false;
@@ -19,11 +20,12 @@ public class MasterObjectScript : MonoBehaviour
     public TextMeshProUGUI timeLeft;
     public TextMeshProUGUI p1ScoreDisplay;
     public TextMeshProUGUI p2ScoreDisplay;
+    public TextMeshProUGUI countdownText;
 
     public GameObject CBTutorialImage;
     public SpriteRenderer CBTutorialImageSprite;
-    private float tutorialTransparency = 1;
     public bool tutorialBool;
+    public bool countdownBool;
 
     public void Start()
     {
@@ -31,14 +33,15 @@ public class MasterObjectScript : MonoBehaviour
         p2Win = false;
         p1ScoreDisplay.SetText("");
         p2ScoreDisplay.SetText("");
+        countdownText.SetText("");
         tutorialBool = true;
-        tutorialTransparency = 1;
+        countdownBool = true;
         CBTutorialImageSprite = CBTutorialImage.GetComponent<SpriteRenderer>();
         StartCoroutine(TutorialCoroutine());
     }
     void Update()
     {
-        if(tutorialBool == false)
+        if(countdownBool == false)
         {
             int newTargetTime = (int)targetTime;
             timerText.SetText("Time left:");
@@ -49,8 +52,7 @@ public class MasterObjectScript : MonoBehaviour
             p2Score = cbPlayer2.p2InputCount;
             targetTime -= Time.deltaTime;
         }
-
-        
+     
 
         if (targetTime <= 0.0f)
         {
@@ -88,7 +90,7 @@ public class MasterObjectScript : MonoBehaviour
         }
         Invoke("BackToMenu", 3f);
         targetTime = 1f;
-        tutorialBool = true;
+        countdownBool = true;
     }
 
     IEnumerator TutorialCoroutine()
@@ -99,24 +101,27 @@ public class MasterObjectScript : MonoBehaviour
 
 
         //yield on a new YieldInstruction that waits for 4 seconds.
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(4.5f);
 
         //After we have waited 4 sec, displays game by activating "if" statement in Update
         tutorialBool = false;
         Debug.Log("Finished Tutorial at timestamp : " + Time.time);
+        //FadeIntoGame();
 
     }
 
     void FadeIntoGame()
     {
-        CBTutorialImageSprite.color = new Color(1f, 1f, 1f, tutorialTransparency);
-        if (tutorialTransparency > 0)
+        CBTutorialImageSprite.color = new Color(0f, 0f, 0f, 1f);
+        int intCountdown = (int)countdown;
+        countdownText.SetText(""+ intCountdown);
+        countdown -= Time.deltaTime;
+        //new WaitForSeconds(3);
+        if(countdown <=0)
         {
-            tutorialTransparency -= Time.deltaTime;
-        }
-        else
-        {
-            CBTutorialImageSprite.enabled = false;
+            CBTutorialImageSprite.color = new Color(0f, 0f, 0f, 0f);
+            countdownText.SetText("");
+            countdownBool = false;
         }
     }
 
