@@ -7,9 +7,13 @@ public class DeathZone : MonoBehaviour
 {
     public GameObject playerBlood;
     private EndGameTimer timer;
+    public AudioClip blender;
     private void Start()
     {
         timer = GameObject.Find("CountDown_Text").GetComponent<EndGameTimer>();
+
+        GetComponent<AudioSource>().playOnAwake = false;
+        GetComponent<AudioSource>().clip = blender;
     }
     
     //script kills players on fall in zone.
@@ -27,7 +31,9 @@ public class DeathZone : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        
+        GetComponent<AudioSource>().Play();
+
+        Instantiate(playerBlood, transform.position, Quaternion.identity);
 
         timer.countDownTime = 0;
         timer.StartCoroutine(timer.CountDownToEnd());
