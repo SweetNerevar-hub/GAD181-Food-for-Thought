@@ -12,6 +12,8 @@ public class MusicManager : MonoBehaviour {
 
     float waitTime = 0.01f;
 
+    int currentScene;
+
     private void Awake() {
         if(instance == null) {
             instance = this;
@@ -30,6 +32,8 @@ public class MusicManager : MonoBehaviour {
     }
 
     void CallFadeAudioOut(int sceneIndex) {
+        currentScene = sceneIndex;
+
         if (musicClips[sceneIndex - 1] == null) return;
 
         StartCoroutine(FadeAudioOut(sceneIndex));
@@ -51,10 +55,16 @@ public class MusicManager : MonoBehaviour {
     }
 
     IEnumerator FadeAudioIn() {
+        if (currentScene == 2) {
+            musicClips[1] = musicClips[0];
+        }
+
         while (audioSource.volume < 0.99f) {
             audioSource.volume += waitTime;
 
             yield return new WaitForSecondsRealtime(waitTime);
         }
+
+        
     }
 }
