@@ -15,8 +15,6 @@ public class DeathZone : MonoBehaviour
     //script kills players on fall in zone.
     void OnTriggerEnter2D(Collider2D other)
     {
-      // Instantiate(playerBlood, transform.position, Quaternion.identity);
-
 
         if (!timer.PlayerOneWin())
         {
