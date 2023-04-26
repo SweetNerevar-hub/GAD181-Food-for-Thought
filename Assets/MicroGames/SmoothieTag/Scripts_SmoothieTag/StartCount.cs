@@ -33,7 +33,7 @@ public class StartCount : MonoBehaviour
         }
 
         startCountDisplay.text = "Fight !";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         ResumeGame();
         
         
