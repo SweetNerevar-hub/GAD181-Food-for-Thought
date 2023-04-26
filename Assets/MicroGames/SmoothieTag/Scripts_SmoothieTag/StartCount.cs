@@ -13,6 +13,9 @@ public class StartCount : MonoBehaviour
     public GameObject startGame;
     public static bool isPlaying;
 
+    public GameObject player;
+    public GameObject player2;
+
     private void Start()
     {
         PauseGame();
@@ -30,11 +33,12 @@ public class StartCount : MonoBehaviour
         }
 
         startCountDisplay.text = "Fight !";
-
         yield return new WaitForSeconds(2f);
-        startGame.SetActive(false);
-
         ResumeGame();
+        
+        
+
+        
       
     }
  
@@ -42,6 +46,8 @@ public class StartCount : MonoBehaviour
     {
         startGame.SetActive(true);
         isPlaying = false;
+        player.GetComponent<SideOnMovement>().enabled = false;
+        player2.GetComponent<SideOnMovement>().enabled = false;
         Debug.Log("is paused");
     }
 
@@ -50,6 +56,8 @@ public class StartCount : MonoBehaviour
         startGame.SetActive(false);
         Time.timeScale = 1f;
         isPlaying = true;
+        player.GetComponent<SideOnMovement>().enabled = true;
+        player2.GetComponent<SideOnMovement>().enabled = true;
         Debug.Log("is Playing");
     }
 }
