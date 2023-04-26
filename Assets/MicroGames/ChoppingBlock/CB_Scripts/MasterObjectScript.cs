@@ -87,6 +87,8 @@ public class MasterObjectScript : MonoBehaviour
             p1Win = true; p2Win = true;
         }
         Invoke("BackToMenu", 3f);
+        targetTime = 1f;
+        tutorialBool = true;
     }
 
     IEnumerator TutorialCoroutine()
