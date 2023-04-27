@@ -55,6 +55,7 @@ public class MusicManager : MonoBehaviour {
     }
 
     IEnumerator FadeAudioIn() {
+<<<<<<< HEAD
 
         if (currentScene == 2) {
             musicClips[1] = musicClips[0];
@@ -62,6 +63,12 @@ public class MusicManager : MonoBehaviour {
 
         if (currentScene == 2) musicClips[1] = musicClips[0];
 
+=======
+        if (currentScene == 2) {
+            musicClips[1] = musicClips[0];
+        }
+        if (currentScene == 2) musicClips[1] = musicClips[0];
+>>>>>>> main
 
         while (audioSource.volume < 0.99f) {
             audioSource.volume += waitTime;
