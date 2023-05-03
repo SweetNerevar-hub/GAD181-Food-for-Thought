@@ -7,42 +7,45 @@ using UnityEngine.SceneManagement;
 
 public class EndGameTimer : MonoBehaviour
 {
-    public int countDownTime;
+    public float countDownTime = 5f;
     public TextMeshProUGUI countDownDisplay;
     public GameObject playerOne;
     public GameObject playerTwo;
 
     private void Start()
     {
-
+      StartCoroutine(CountDownToEnd());
     }
     private void Update()
     {
-      if(StartCount.isPlaying)
-        {
-            StartCoroutine(CountDownToEnd());
-        }
+
     }
     public IEnumerator CountDownToEnd()
     {
-        StartCount.isPlaying = false;
 
         while (countDownTime > 0)
         {
-            countDownDisplay.text = countDownTime.ToString();
             yield return new WaitForSeconds(1f);
-
             countDownTime--;
+            countDownDisplay.text = countDownTime.ToString();
         }
+
 
         PlayerOneWin();
 
-        yield return new WaitForSeconds(4f);
-
-        EventManager.instance.UpdateUI(2);
-
         countDownDisplay.gameObject.SetActive(false);
+
+
+          Debug.Log("timerdone");
+            
+          Invoke("GameOver", 3f);
         
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(2);
+        Debug.Log("game end");
     }
 
     public bool PlayerOneWin()
@@ -51,6 +54,7 @@ public class EndGameTimer : MonoBehaviour
         {
             countDownDisplay.text = "P2!";
             return false;
+
         }
         else
         {

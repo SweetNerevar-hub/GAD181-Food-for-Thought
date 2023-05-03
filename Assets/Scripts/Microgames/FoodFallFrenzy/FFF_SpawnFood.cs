@@ -13,7 +13,7 @@ namespace FoodFallFrenzy {
         int gameTimer;
 
         private void Start() {
-            gameTimer = 60;
+            gameTimer = 120;
 
             StartCoroutine(FoodSpawnerTimer());
         }
@@ -52,7 +52,7 @@ namespace FoodFallFrenzy {
                 gameTimer--;
                 SpawnFood();
 
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(0.5f);
             }
 
             yield return new WaitForSeconds(5);

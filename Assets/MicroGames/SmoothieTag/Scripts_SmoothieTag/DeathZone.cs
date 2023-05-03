@@ -31,15 +31,15 @@ public class DeathZone : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        Debug.Log("game end by blender");
         GetComponent<AudioSource>().Play();
-
+       
         Instantiate(playerBlood, transform.position, Quaternion.identity);
 
         timer.countDownTime = 0;
         timer.StartCoroutine(timer.CountDownToEnd());
-        
     }
 
- 
+       
 
 }

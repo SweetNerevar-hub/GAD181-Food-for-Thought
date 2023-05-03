@@ -15,6 +15,10 @@ public class EventManager : MonoBehaviour {
         }
     }
 
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+    }
+
     public event Action<int> OnUpdateUI;
     public event Action<int> OnPlayTutorial;
     public event Action OnScreenFade;
