@@ -41,7 +41,7 @@ public class MasterObjectScript : MonoBehaviour
     }
     void Update()
     {
-        if(countdownBool == false)
+        if(countdownBool == false && gameOver == false)
         {
             int newTargetTime = (int)targetTime;
             timerText.SetText("Time left:");

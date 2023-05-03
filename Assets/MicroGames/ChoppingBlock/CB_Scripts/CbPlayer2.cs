@@ -34,7 +34,7 @@ public class CbPlayer2 : MonoBehaviour
     {
         
         MasterObjectScript masterObjectScript = GetComponentInParent<MasterObjectScript>();
-        if (masterObjectScript.gameOver == false && masterObjectScript.tutorialBool == false)
+        if (masterObjectScript.gameOver == false && masterObjectScript.tutorialBool == false && masterObjectScript.countdownBool == false)
         {
             if(p2BackgroundFrame >= 4)
             {
