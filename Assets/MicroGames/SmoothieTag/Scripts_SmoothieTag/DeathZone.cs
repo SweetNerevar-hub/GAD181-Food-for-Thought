@@ -35,6 +35,9 @@ public class DeathZone : MonoBehaviour
 
         Instantiate(playerBlood, transform.position, Quaternion.identity);
 
+        EventManager.instance.UpdateUI(2);
+        //SceneManager.LoadScene(2);
+
         timer.countDownTime = 0;
         timer.StartCoroutine(timer.CountDownToEnd());
         

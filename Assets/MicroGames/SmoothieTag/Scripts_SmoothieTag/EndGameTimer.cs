@@ -37,9 +37,10 @@ public class EndGameTimer : MonoBehaviour
 
         PlayerOneWin();
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
 
         EventManager.instance.UpdateUI(2);
+        //SceneManager.LoadScene(2);
 
         countDownDisplay.gameObject.SetActive(false);
         
