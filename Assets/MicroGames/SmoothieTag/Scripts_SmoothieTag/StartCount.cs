@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class StartCount : MonoBehaviour
 {
-    public int startCountTime;
+    public float startCountTime;
     public TextMeshProUGUI startCountDisplay;
 
     public GameObject startGame;
@@ -35,9 +35,6 @@ public class StartCount : MonoBehaviour
         startCountDisplay.text = "Fight !";
         yield return new WaitForSeconds(3f);
         ResumeGame();
-        
-        
-
         
       
     }
