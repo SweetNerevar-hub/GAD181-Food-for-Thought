@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FFF_Eggplant_Jump
+  m_Name: OnionIdle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,16 +20,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1337908243, guid: 3788dc3a7752ab543bc5845047ef2bab, type: 3}
-    - time: 0.25
-      value: {fileID: 14576387, guid: 3788dc3a7752ab543bc5845047ef2bab, type: 3}
-    - time: 0.5
-      value: {fileID: 14576387, guid: 3788dc3a7752ab543bc5845047ef2bab, type: 3}
+      value: {fileID: -1489528230, guid: d8b3705bd8fda2a47979961bca1784cc, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  - curve:
+    - time: 0
+      value: {fileID: 1981951571, guid: d8b3705bd8fda2a47979961bca1784cc, type: 3}
+    attribute: m_Sprite
+    path: Onion
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -43,16 +46,22 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 3356586797
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1337908243, guid: 3788dc3a7752ab543bc5845047ef2bab, type: 3}
-    - {fileID: 14576387, guid: 3788dc3a7752ab543bc5845047ef2bab, type: 3}
-    - {fileID: 14576387, guid: 3788dc3a7752ab543bc5845047ef2bab, type: 3}
+    - {fileID: -1489528230, guid: d8b3705bd8fda2a47979961bca1784cc, type: 3}
+    - {fileID: 1981951571, guid: d8b3705bd8fda2a47979961bca1784cc, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.51666665
+    m_StopTime: 0.083333336
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

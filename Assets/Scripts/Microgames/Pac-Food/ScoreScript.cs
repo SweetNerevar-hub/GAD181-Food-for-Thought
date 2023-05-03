@@ -3,28 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreScriptP1 : MonoBehaviour
+public class ScoreScript : MonoBehaviour
 {
     public Text MyscoreText;
-    private int ScoreNum;
+    [HideInInspector]public int ScoreNum;
+    public string PlayerName;
 
 
     // Start is called before the first frame update
     void Start()
     {
         ScoreNum = 0;
-        MyscoreText.text = "Player 1 : " + ScoreNum;
+        MyscoreText.text = PlayerName + " : " + ScoreNum;
     }
 
 
     private void OnTriggerEnter2D(Collider2D Point)
     {
-        if(Point.tag == "MyPoint")
+        if (Point.tag == "MyPoint")
         {
             ScoreNum += 1;
             Destroy(Point.gameObject);
-            MyscoreText.text = "Player 1 : " + ScoreNum;
+            MyscoreText.text = PlayerName + " : " + ScoreNum;
 
         }
     }
 }
+
+
