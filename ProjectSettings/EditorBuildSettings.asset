@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Microgames/ChoppingBlockMG.unity
     guid: 8f29b21c568833a43aa047196f5b9eee
   - enabled: 1
-    path: Assets/Scenes/Microgames/SmoothieTag/SmoothieTag.unity
+    path: Assets/Scenes/Microgames/SmoothieTag.unity
     guid: e71ec3c14c6d36c4aaf6403b300a0ed8
   - enabled: 1
     path: Assets/Scenes/Microgames/WaterHazardMG.unity
