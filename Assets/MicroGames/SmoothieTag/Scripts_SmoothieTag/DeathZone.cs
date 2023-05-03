@@ -24,22 +24,38 @@ public class DeathZone : MonoBehaviour
         {
             timer.countDownDisplay.text = "P2 WIN";
             Destroy(other.gameObject);
+            Invoke("GameOver", 3f);
+            timer.countDownTime = 0;
         }
         else
         {
             timer.countDownDisplay.text = "P1 WIN";
             Destroy(other.gameObject);
+            Invoke("GameOver", 3f);
+            timer.countDownTime = 0;
         }
 
-        Debug.Log("game end by blender");
-        GetComponent<AudioSource>().Play();
-       
-        Instantiate(playerBlood, transform.position, Quaternion.identity);
 
-        timer.countDownTime = 0;
-        timer.StartCoroutine(timer.CountDownToEnd());
+        timer.countDownTime = 1;
+        GetComponent<AudioSource>().Play();
+        timer.countDownDisplay.gameObject.SetActive(false);
+
+
+
+
+
+
+
+        //timer.StartCoroutine(timer.CountDownToEnd());
+
+
     }
 
-       
+    public void GameOver()
+    {
+        SceneManager.LoadScene(2);
+        Debug.Log("game end");
+    }
+    
 
 }

@@ -32,13 +32,14 @@ public class EndGameTimer : MonoBehaviour
 
 
         PlayerOneWin();
-
-        countDownDisplay.gameObject.SetActive(false);
-
-
+        if(countDownTime < 0)
+        {
+         countDownDisplay.gameObject.SetActive(false);
           Debug.Log("timerdone");
             
           Invoke("GameOver", 3f);
+        }
+      
         
     }
 
