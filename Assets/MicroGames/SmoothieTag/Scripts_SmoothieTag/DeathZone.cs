@@ -34,7 +34,7 @@ public class DeathZone : MonoBehaviour
         GetComponent<AudioSource>().Play();
 
         Instantiate(playerBlood, transform.position, Quaternion.identity);
-
+        Debug.Log("game end");
         EventManager.instance.UpdateUI(2);
         //SceneManager.LoadScene(2);
 

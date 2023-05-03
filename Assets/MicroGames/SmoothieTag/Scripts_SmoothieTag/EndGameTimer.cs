@@ -37,8 +37,8 @@ public class EndGameTimer : MonoBehaviour
 
         PlayerOneWin();
 
-        yield return new WaitForSeconds(2f);
-
+        yield return new WaitForSeconds(1f);
+        Debug.Log("game end");
         EventManager.instance.UpdateUI(2);
         //SceneManager.LoadScene(2);
 
