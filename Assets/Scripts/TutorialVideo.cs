@@ -17,6 +17,7 @@ public class TutorialVideo : MonoBehaviour {
     void PlayTutorialVideo(int sceneIndex) {
         VideoPlayer videoPlayer = GetComponent<VideoPlayer>();
 
+        // Make the TimeScale 0, so the tutorial can play before gameplay starts
         Time.timeScale = 0;
 
         if (sceneIndex == 3) {
@@ -46,9 +47,11 @@ public class TutorialVideo : MonoBehaviour {
             yield return new WaitForSecondsRealtime(1);
         }
 
+        // Hide the video player when the tutorial ends
         videoRenderTexture.transform.GetChild(0).gameObject.SetActive(false);
         videoRenderTexture.enabled = false;
 
+        // Start gameplay when tutorial ends
         Time.timeScale = 1;
     }
 

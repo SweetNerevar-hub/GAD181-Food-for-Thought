@@ -19,8 +19,10 @@ namespace BPAD {
             if(winner.name == "Player One" && playerOnePoints < 3) {
                 playerOnePoints++;
 
+                // This is used to make the skull icon show up in the same spot across many different screen sizes
                 float padding = Screen.width / (skull.GetComponent<RectTransform>().rect.width / 2);
 
+                // Spawn the skull at the location specific to the winning player
                 Vector2 skullPosition = new Vector2(skullSpawnPoints[0].position.x + (padding * playerOnePoints), skullSpawnPoints[0].position.y);
                 Instantiate(skull, skullPosition, Quaternion.identity, skullSpawnPoints[0]);
             }

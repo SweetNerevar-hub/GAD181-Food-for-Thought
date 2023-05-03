@@ -13,7 +13,7 @@ namespace FoodFallFrenzy {
         int gameTimer;
 
         private void Start() {
-            gameTimer = 120;
+            gameTimer = 100; // 50 in-game seconds
 
             StartCoroutine(FoodSpawnerTimer());
         }

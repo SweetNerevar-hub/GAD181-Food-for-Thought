@@ -23,16 +23,21 @@ namespace BPAD {
         private void OnEnable() {
             EventManager.instance.DisplayWinner_BPAD += DisplayOneLiner;
 
-            speechBubbles[0].GetComponent<Image>().enabled = false;
-            speechBubbles[1].GetComponent<Image>().enabled = false;
+            // When BPAD begins, disable the speech bubble images
+            HideSpeechBubble();
         }
 
         void DisplayOneLiner(GameObject winner) {
+
+            // Get the speech bubble object relative to the winner
             Transform speechBubblePosition = winner.transform.GetChild(0);
 
+            // Randomly chooses a one-liner
             int line = Random.Range(0, oneLiners.Length);
 
             if (winner.name == "Player One") {
+
+                // Enable the speech bubble and set the text to the one-liner
                 speechBubbles[0].GetComponent<Image>().enabled = true;
                 speechBubbles[0].GetComponentInChildren<Text>().text = oneLiners[line];
             }

@@ -119,6 +119,4 @@ public class TopDownMovement : MonoBehaviour {
         InputManager.instance.MoveRight -= MoveRight;
         */
     }
-
-    
 }

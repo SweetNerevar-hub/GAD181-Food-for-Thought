@@ -40,17 +40,22 @@ namespace BPAD {
 
                     return;
 
+                // When the countdown timer has hit 0, and the player inputs have been enabled
                 case true:
                     if (playerOne) {
+
+                        // This was to fix a bug where any player can just hold both of the randomly assigned buttons at the same time, then quickly press their shoot button, removing the quick reflexes aspect
                         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D) || !Input.GetKey(avaliableKeys[playerOne_RandomlyChosenKey])) {
                             correctInput = false;
 
                         }
 
+                        // If the player presses the correct button
                         else if (Input.GetKey(avaliableKeys[playerOne_RandomlyChosenKey])) {
                             correctInput = true;
                         }
 
+                        // Then presses their shoot button (Space), declare them the winner and turn off all player inputs
                         if(Input.GetKeyDown(KeyCode.Space) && correctInput) {
                             Winner();
                         }
@@ -77,9 +82,11 @@ namespace BPAD {
         void EnablePlayerInput() {
             inputEnabled = true;
 
+            // Randomly choose a directional button for each player
             playerOne_RandomlyChosenKey = Random.Range(0, 2);
             playerTwo_RandomlyChosenKey = Random.Range(2, 4);
 
+            // Then display the needed inputs to each player
             EventManager.instance.BPAD_DisplayPlayerInput(playerOne_RandomlyChosenKey, playerTwo_RandomlyChosenKey, playerOne);
         }
 
@@ -88,13 +95,15 @@ namespace BPAD {
             isWinner = true;
             gameOver = true;
 
+            // Gunshot sound effect
             audioSource.PlayOneShot(audioSource.clip);
 
             EventManager.instance.BPAD_DisplayWinner(gameObject);
-
         }
 
         void SpawnBloodEffect(GameObject winner) {
+
+            // Spawn the blood effect for the loser
             if (gameObject != winner) {
                 Instantiate(bloodEffect, bloodSpawn.position, Quaternion.identity, transform);
             }
@@ -103,6 +112,7 @@ namespace BPAD {
         void UpdateAnimations() {
             if (isWinner) animator.SetInteger("isWinner", 1);
 
+            // Plays the death animation for the loser
             else animator.SetInteger("isWinner", -1);
         }
 
